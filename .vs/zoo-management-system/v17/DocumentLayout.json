@@ -1,0 +1,59 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\\u043C\u043E\u0438 \u043A\u043E\u043D\u0441\u043F\u0435\u043A\u0442\u044B\\4-\u0439 \u043A\u0443\u0440\u0441\\\u0420\u0430\u0431\u043E\u0447\u0435\u0435 \u043C\u0435\u0441\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A\u0430 \u0437\u043E\u043E\u043F\u0430\u0440\u043A\u0430\\zoo-management-system\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2E881E07-02D8-4E55-8192-9E13C9774FBE}|zoo-management-system.client\\zoo-management-system.client.esproj|d:\\\u043C\u043E\u0438 \u043A\u043E\u043D\u0441\u043F\u0435\u043A\u0442\u044B\\4-\u0439 \u043A\u0443\u0440\u0441\\\u0440\u0430\u0431\u043E\u0447\u0435\u0435 \u043C\u0435\u0441\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A\u0430 \u0437\u043E\u043E\u043F\u0430\u0440\u043A\u0430\\zoo-management-system\\zoo-management-system.client\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{2E881E07-02D8-4E55-8192-9E13C9774FBE}|zoo-management-system.client\\zoo-management-system.client.esproj|solutionrelative:zoo-management-system.client\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\\u043C\u043E\u0438 \u043A\u043E\u043D\u0441\u043F\u0435\u043A\u0442\u044B\\4-\u0439 \u043A\u0443\u0440\u0441\\\u0420\u0430\u0431\u043E\u0447\u0435\u0435 \u043C\u0435\u0441\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A\u0430 \u0437\u043E\u043E\u043F\u0430\u0440\u043A\u0430\\zoo-management-system\\zoo-management-system.client\\README.md",
+              "RelativeDocumentMoniker": "zoo-management-system.client\\README.md",
+              "ToolTip": "D:\\\u043C\u043E\u0438 \u043A\u043E\u043D\u0441\u043F\u0435\u043A\u0442\u044B\\4-\u0439 \u043A\u0443\u0440\u0441\\\u0420\u0430\u0431\u043E\u0447\u0435\u0435 \u043C\u0435\u0441\u0442\u043E \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A\u0430 \u0437\u043E\u043E\u043F\u0430\u0440\u043A\u0430\\zoo-management-system\\zoo-management-system.client\\README.md",
+              "RelativeToolTip": "zoo-management-system.client\\README.md",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-06-15T17:26:44.749Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

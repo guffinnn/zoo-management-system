@@ -1,0 +1,6 @@
+@zoo_management_system.Server_HostAddress = http://localhost:5277
+
+GET {{zoo_management_system.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
