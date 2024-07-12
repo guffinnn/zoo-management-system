@@ -1,10 +1,10 @@
 import {JSX} from "react"
 import './Home.css'
-import more from "../../assets/more-icon.svg"
 import gibbon from "../../assets/gibbon.jpeg"
 import employee from "../../assets/zookeeper.jpeg"
 import medicine from "../../assets/medicine.jpeg"
 import AsideNavBar from '../../components/AsideNavBar/AsideNavBar.tsx';
+import Header from "../../components/Header/Header.tsx";
 
 function Home(): JSX.Element {
     return (
@@ -14,12 +14,7 @@ function Home(): JSX.Element {
             {/*MAIN COMPONENT*/}
             <main className="main">
                 {/*HEADER COMPONENT*/}
-                <header className="header">
-                    <p className="page__name">Главная страница</p>
-                    <div className="more__container">
-                        <img className="more__image" src={more} alt="Еще" />
-                    </div>
-                </header>
+                <Header pageTitle="Главная страница" />
                 {/*SECTION COMPONENT*/}
                 <section className="section">
                     <div className="cards">
