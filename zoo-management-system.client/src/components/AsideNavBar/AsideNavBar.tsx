@@ -1,10 +1,10 @@
 import {JSX} from "react"
 import './AsideNavBar.css'
-import Footer from "../Footer/Footer.tsx";
+import Footer from "../Footer/Footer.tsx"
 
 interface ListRow {
-    name: string;
-    link: string;
+    name: string,
+    link: string
 }
 
 const LIST_ROWS: ListRow[] = [

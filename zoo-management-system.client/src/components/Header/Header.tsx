@@ -1,6 +1,6 @@
 import {JSX} from "react"
 import './Header.css'
-import more from "../../assets/more-icon.svg";
+import more from "../../assets/more-icon.svg"
 
 type Props = {
     pageTitle: string

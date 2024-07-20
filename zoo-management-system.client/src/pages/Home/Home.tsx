@@ -3,8 +3,8 @@ import './Home.css'
 import gibbon from "../../assets/gibbon.jpeg"
 import employee from "../../assets/zookeeper.jpeg"
 import medicine from "../../assets/medicine.jpeg"
-import AsideNavBar from '../../components/AsideNavBar/AsideNavBar.tsx';
-import Header from "../../components/Header/Header.tsx";
+import AsideNavBar from '../../components/AsideNavBar/AsideNavBar.tsx'
+import Header from "../../components/Header/Header.tsx"
 
 function Home(): JSX.Element {
     return (
