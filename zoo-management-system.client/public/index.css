@@ -1,37 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 @font-face {
-  font-family: 'Oddval SemiBold';
-  src:
-          url('../src/assets/fonts/Oddval-SemiBold.woff') format('woff'),
-          url('../src/assets/fonts/Oddval-SemiBold.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Oddval SemiBold';
+    src:
+            url('../src/assets/fonts/Oddval-SemiBold.woff') format('woff'),
+            url('../src/assets/fonts/Oddval-SemiBold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /*ALL*/
 * {
-  margin: 0;
-  padding: 0;
-  border: none;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  text-decoration: none;
-  outline: none;
-  background: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    outline: none;
+    background: none;
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "aside main";
+    grid-auto-rows: minmax(240px, auto);
+}
 
-  position: relative;
+body.open {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+            "aside"
+            "main";
+}
 
-  transition: none;
+a {
+    width: 100%;
+    text-decoration: none;
+    color: #14181F;
+}
 
-  overflow-x: hidden;
+main.main {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 20px;
+    grid-template-areas:
+              "header"
+              "section";
+    gap: 10px;
+    grid-auto-rows: minmax(240px, auto);
+}
+
+main.open {
+    display: none;
+    grid-row: 2 / 3;
+}
+
+@keyframes open_menu {
+    0% {
+        opacity: 0;
+        scale: 1.5;
+    }
+
+    100% {
+        opacity: 1;
+        scale: 1;
+    }
 }
 
 img {
-  cursor: pointer;
+    cursor: pointer;
+}
+
+@media(max-width: 600px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+                "main"
+                "aside";
+        grid-auto-rows:  minmax(0, 100%);
+    }
 }

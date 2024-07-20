@@ -1,4 +1,4 @@
-import {JSX} from "react"
+import { JSX } from "react"
 import './Header.css'
 import more from "../../assets/more-icon.svg"
 

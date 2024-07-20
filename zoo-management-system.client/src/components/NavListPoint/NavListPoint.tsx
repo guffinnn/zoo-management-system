@@ -1,0 +1,38 @@
+import {JSX} from "react"
+import './NavListPoint.css'
+
+interface ListPoint {
+    componentKey: number,
+    pageItem: {
+        link: string,
+        name: string
+    },
+    activeKey: number | null,
+    setActiveKey: (key: number | null) => void
+}
+
+function NavListPoint({ componentKey, pageItem, activeKey, setActiveKey }: ListPoint): JSX.Element {
+    const isActive = componentKey === activeKey
+
+    const clickHandler = () => {
+        setActiveKey(isActive ? null : componentKey)
+    }
+
+    return (
+        <>
+            {/*NAV_LIST_POINT COMPONENT*/}
+            <li key={componentKey} className="list__point">
+                <a href={pageItem.link}>
+                    <div className={`content ${isActive ? "active" : ""}`}
+                         onClick={clickHandler}
+                    >
+                        {pageItem.name}
+                    </div>
+                </a>
+            </li>
+        </>
+
+    )
+}
+
+export default NavListPoint

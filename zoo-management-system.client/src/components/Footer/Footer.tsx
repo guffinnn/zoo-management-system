@@ -1,15 +1,24 @@
-import {JSX} from "react"
+import { JSX } from "react"
+/*REDUX*/
+import { useDispatch } from 'react-redux'
+import { toggleMenu } from '../../store/menuSlice'
 import './Footer.css'
 import burger from "../../assets/burger.svg"
 import user from "../../assets/user-icon.png"
 import select from "../../assets/select-arrow.svg"
 
 function Footer(): JSX.Element {
+    const dispatch = useDispatch()
+
+    const handleClick = () => {
+        dispatch(toggleMenu())
+    }
+
     return (
         <>
             {/*FOOTER COMPONENT*/}
             <footer className="footer">
-                <div className="burger__menu">
+                <div className="burger__menu" onClick={handleClick}>
                     <img className="burger__icon" src={burger} alt="Меню"/>
                 </div>
                 {/*LINK TO AUTH MODAL*/}
