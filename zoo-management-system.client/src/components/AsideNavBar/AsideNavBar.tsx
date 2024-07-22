@@ -2,7 +2,7 @@ import { JSX, useState, useEffect } from "react"
 /*REDUX*/
 import { useSelector } from "react-redux"
 import { RootState } from "../../store/store.ts"
-import './AsideNavBar.css'
+import "./AsideNavBar.css"
 import Footer from "../Footer/Footer.tsx"
 import NavListPoint from "../NavListPoint/NavListPoint.tsx"
 
@@ -13,7 +13,7 @@ interface ListRow {
 
 const LIST_ROWS: ListRow[] = [
     { name: "Главная", link: "/" },
-    { name: "Животные", link: "#" },
+    { name: "Животные", link: "animals" },
     { name: "Рабочее время", link: "#" },
     { name: "Мед. обследования", link: "#" },
     { name: "Кормление", link: "#" },
@@ -39,17 +39,15 @@ function AsideNavBar(): JSX.Element {
             <aside className={`aside ${isOpen ? 'open' : ''}`}>
                 <nav className={`aside__nav ${isOpen ? 'open' : ''}`}>
                     <ul className="aside__ul__list">
+                        {/*NAV_LIST_POINT COMPONENT*/}
                         {LIST_ROWS.map((item, index) => (
-                            <>
-                                {/*NAV_LIST_POINT COMPONENT*/}
-                                <NavListPoint
-                                    key={index}
-                                    componentKey={index}
-                                    pageItem={item}
-                                    activeKey={activeKey}
-                                    setActiveKey={setActiveKey}
-                                />
-                            </>
+                            <NavListPoint
+                                key={index}
+                                componentKey={index}
+                                pageItem={item}
+                                activeKey={activeKey}
+                                setActiveKey={setActiveKey}
+                            />
                         ))}
                     </ul>
                 </nav>

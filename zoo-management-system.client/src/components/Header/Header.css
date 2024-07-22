@@ -57,3 +57,20 @@ div.more__container {
 div.more__container:active {
     box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.12);
 }
+
+div.buttons__frame {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 8px;
+
+    width: fit-content;
+    height: 40px;
+}
+
+@media(max-width: 600px) {
+    div.buttons__frame.--not_empty {
+        width: 100%;
+    }
+}

@@ -1,5 +1,5 @@
-import {JSX} from "react"
-import './NavListPoint.css'
+import { JSX } from "react"
+import "./NavListPoint.css"
 
 interface ListPoint {
     componentKey: number,
@@ -22,10 +22,8 @@ function NavListPoint({ componentKey, pageItem, activeKey, setActiveKey }: ListP
         <>
             {/*NAV_LIST_POINT COMPONENT*/}
             <li key={componentKey} className="list__point">
-                <a href={pageItem.link}>
-                    <div className={`content ${isActive ? "active" : ""}`}
-                         onClick={clickHandler}
-                    >
+                <a href={pageItem.link} target="_self">
+                    <div className={`content ${isActive ? "active" : ""}`} onClick={clickHandler}>
                         {pageItem.name}
                     </div>
                 </a>

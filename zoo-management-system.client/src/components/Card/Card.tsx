@@ -1,5 +1,5 @@
 import { JSX } from "react"
-import './Card.css'
+import "./Card.css"
 
 interface CardProps {
     maskColor: string;

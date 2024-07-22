@@ -1,8 +1,8 @@
 import { JSX } from "react"
 /*REDUX*/
-import { useDispatch } from 'react-redux'
-import { toggleMenu } from '../../store/menuSlice'
-import './Footer.css'
+import { useDispatch } from "react-redux"
+import { toggleMenu } from "../../store/menuSlice"
+import "./Footer.css"
 import burger from "../../assets/burger.svg"
 import user from "../../assets/user-icon.png"
 import select from "../../assets/select-arrow.svg"

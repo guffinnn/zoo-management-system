@@ -1,5 +1,5 @@
 import { JSX } from "react"
-import './Home.css'
+import "./Home.css"
 import gibbon from "../../assets/gibbon.jpeg"
 import employee from "../../assets/zookeeper.jpeg"
 import medicine from "../../assets/medicine.jpeg"

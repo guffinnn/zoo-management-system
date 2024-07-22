@@ -1,0 +1,27 @@
+/*TBODY*/
+td:nth-last-child(-n + 1) {
+    border-right: 0;
+}
+
+p.cell__content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-style: normal;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 140%;
+    color: #14181F;
+
+    height: 100%;
+}
+
+p.cell__content.eye,
+p.cell__content.delete,
+p.cell__content.edit {
+    width: 100%;
+    justify-content: end;
+}
