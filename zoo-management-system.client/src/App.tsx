@@ -1,56 +1,30 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { JSX } from "react"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+/*REDUX*/
+import { useSelector } from "react-redux"
+import { RootState } from "./store/store.ts"
+import AsideNavBar from "./components/AsideNavBar/AsideNavBar.tsx"
+import Home from "./pages/Home/Home"
+import Animals from "./pages/Animals/Animals"
 
-interface Forecast {
-    date: string;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
-}
-
-function App() {
-    const [forecasts, setForecasts] = useState<Forecast[]>();
-
-    useEffect(() => {
-        populateWeatherData();
-    }, []);
-
-    const contents = forecasts === undefined
-        ? <p><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationreact">https://aka.ms/jspsintegrationreact</a> for more details.</em></p>
-        : <table className="table table-striped" aria-labelledby="tabelLabel">
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Temp. (C)</th>
-                    <th>Temp. (F)</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                {forecasts.map(forecast =>
-                    <tr key={forecast.date}>
-                        <td>{forecast.date}</td>
-                        <td>{forecast.temperatureC}</td>
-                        <td>{forecast.temperatureF}</td>
-                        <td>{forecast.summary}</td>
-                    </tr>
-                )}
-            </tbody>
-        </table>;
+function App(): JSX.Element {
+    const isOpen = useSelector((state: RootState) => state.menu.isOpen)
 
     return (
-        <div>
-            <h1 id="tabelLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-            {contents}
-        </div>
-    );
-
-    async function populateWeatherData() {
-        const response = await fetch('weatherforecast');
-        const data = await response.json();
-        setForecasts(data);
-    }
+        <>
+            {/*ASIDE COMPONENT*/}
+            <AsideNavBar />
+            {/*MAIN COMPONENT*/}
+            <main className={`main ${isOpen ? 'open' : ''}`}>
+                <Router>
+                    <Routes>
+                        <Route path="/zoo-management-system" element={<Home />} />
+                        <Route path="/zoo-management-system/animals" element={<Animals />} />
+                    </Routes>
+                </Router>
+            </main>
+        </>
+    )
 }
 
-export default App;
+export default App
