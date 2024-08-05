@@ -1,0 +1,56 @@
+/*PRIMARY_BUTTON*/
+button.add__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 8px;
+
+    width: fit-content;
+    height: 40px;
+
+    background: #3348FF;
+    /* Btn-effect */
+    box-shadow: inset 0 7px 12px rgba(255, 255, 255, 0.08), inset 0 -2px 2px rgba(48, 48, 48, 0.1);
+    border-radius: 8px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 140%;
+
+    color: #FFFFFF;
+
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+button.add__button:before {
+    content: url("../../assets/plus.svg");
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 5px;
+
+    width: auto;
+    height: 100%;
+}
+
+button.add__button:hover {
+    background: rgba(82, 97, 254, 1);
+}
+
+button.add__button:active {
+    background: #3348FF;
+    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+@media(max-width: 600px) {
+    .add__button__container,
+    button.add__button {
+        width: 100%;
+    }
+}

@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+## Система мониторинга и учета работы сотрудников зоопарка
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+_Web-application for accounting and monitoring work of zoo staff_
 
-Currently, two official plugins are available:
+### Функциональные требования
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> _Requirements_
 
-## Expanding the ESLint configuration
+**Рабочий зоопарка** должен иметь возможность:
+- просматривать график уборки вольеров;
+- отмечать проведение уборки вольера;
+- просматривать график кормления животных;
+- отмечать проведения кормления животного;
+- назначать время следующего кормления;
+- просматривать журнал медицинских обследований;
+- отмечать проведение медицинского обследования животного;
+- назначать следующее медицинское обследование животному;
+- просматривать журнал учета животных;
+- добавлять новое животное в журнал учета;
+- просматривать журнал учета его рабочего времени;
+- отмечать выполненную работу в журнале учета.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Администратор** должен иметь возможность:
+- просматривать список сотрудников;
+- подтверждать выполненную работу сотрудника;
+- просматривать отчет работы сотрудника за единицу времени;
+- добавлять нового сотрудника.
 
-- Configure the top-level `parserOptions` property like this:
+**Система мониторинга и учета работы сотрудников зоопарка** должна:
+- авторизовывать сотрудников зоопарка;
+- предоставлять график уборки вольеров;
+- предоставлять график кормления животных;
+- предоставлять журнал учета медицинских обследований;
+- предоставлять журнал учета животных;
+- предоставлять журнал учета рабочего времени сотрудника;
+- предоставлять список сотрудников для администратора системы.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Стек технологий
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+> Tech stack
+
+| Back-end          | Front-end          | Clean code | Database       | VCS  | 
+|:------------------|:-------------------|:-----------|:---------------|:-----|
+| C#                | React              | ESLint     | MS SQL Server  | Git  |
+| ASP.NET           | Vite               | Prettier   |                |      |
+| Node.js           | React Router DOM   | Husky      |                |      |
+|                   | CSS                |            |                |      |
+|                   | Styled components  |            |                |      |

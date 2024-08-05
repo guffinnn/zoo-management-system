@@ -1,0 +1,33 @@
+/*THEAD*/
+th:nth-last-child(-n + 1) {
+    border-right: 0;
+}
+
+p.head__cell__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 140%;
+
+    color: #14181F;
+}
+
+p.head__cell__content.select:after {
+    content: url(../../../assets/triangle.svg);
+
+    padding-left: 10px;
+
+    width: fit-content;
+    height: 100%;
+}
+
+.head__cell__content.numeric {
+    justify-content: end;
+}

@@ -1,7 +1,5 @@
-import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
-import plugin from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react'
 import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
@@ -35,11 +33,27 @@ const target = env.ASPNETCORE_HTTPS_PORT ? `https://localhost:${env.ASPNETCORE_H
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [plugin()],
+    plugins: [react()],
+    base: "/zoo-management-system/",
     resolve: {
         alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
-        }
+            '@': path.resolve(__dirname, './src'),
+            '@api': path.resolve(__dirname, './src/api'),
+            '@assets': path.resolve(__dirname, './src/assets'),
+            '@components': path.resolve(__dirname, './src/components'),
+            '@constants': path.resolve(__dirname, './src/constants'),
+            '@context': path.resolve(__dirname, './src/context'),
+            '@custom-types': path.resolve(__dirname, './src/types'),
+            '@helpers': path.resolve(__dirname, './src/helpers'),
+            '@hooks': path.resolve(__dirname, './src/hooks'),
+            '@pages': path.resolve(__dirname, './src/pages'),
+            '@store': path.resolve(__dirname, './src/store'),
+            '@styles': path.resolve(__dirname, './src/styles'),
+            '@utils': path.resolve(__dirname, './src/utils')
+        },
+    },
+    build: {
+        outDir: 'build'
     },
     server: {
         proxy: {
