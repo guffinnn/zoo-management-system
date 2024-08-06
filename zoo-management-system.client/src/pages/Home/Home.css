@@ -2,7 +2,7 @@
 div.more__container:active,
 div.burger__menu:active,
 div.footer:active {
-    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.12);
+    box-shadow: inset 0 4px 12px #0000001E;
 }
 
 div.cards {
@@ -15,25 +15,25 @@ div.cards {
 
 div.cards::-webkit-scrollbar-track  {
     border-radius: 10px;
-    background-color: rgba(245, 245, 245, 0);
+    background-color: #F5F5F500;
 }
 
 div.cards::-webkit-scrollbar  {
     width: 6px;
     height: 6px;
-    background-color: rgba(245, 245, 245, 0.3);
+    background-color: #F5F5F54C;
 }
 
 div.cards::-webkit-scrollbar-thumb  {
     border-radius: 10px;
-    background-color: rgb(237, 240, 242);
+    background-color: #EDF0F2FF;
 }
 
 @media(max-width: 500px) {
     div.cards::-webkit-scrollbar  {
         width: 4px;
         height: 4px;
-        background-color: rgba(245, 245, 245, 0);
+        background-color: #F5F5F500;
     }
 }
 
@@ -47,6 +47,8 @@ div.cards__fluid {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media(min-width: 1370px) {
@@ -64,8 +66,8 @@ div.cards__fluid {
 
     margin: 20px 20px 0 20px;
 
-    background: #FFFFFF;
-    border: 1px solid #DCE0E5;
+    background: var(--neutral-0);
+    border: 1px solid var(--neutral-200);
     border-radius: 8px;
 }
 
@@ -81,7 +83,7 @@ div.cards__fluid {
     line-height: 140%;
     text-align: center;
 
-    color: #525E6F;
+    color: var(--neutral-700);
 }
 
 @media(max-width: 600px) {

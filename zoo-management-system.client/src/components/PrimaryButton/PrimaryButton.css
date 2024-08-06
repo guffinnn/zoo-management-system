@@ -10,9 +10,9 @@ button.add__button {
     width: fit-content;
     height: 40px;
 
-    background: #3348FF;
+    background: var(--primary-500);
     /* Btn-effect */
-    box-shadow: inset 0 7px 12px rgba(255, 255, 255, 0.08), inset 0 -2px 2px rgba(48, 48, 48, 0.1);
+    box-shadow: inset 0 7px 12px #FFFFFF14, inset 0 -2px 2px #30303019;
     border-radius: 8px;
 
     font-style: normal;
@@ -20,7 +20,7 @@ button.add__button {
     font-size: 15px;
     line-height: 140%;
 
-    color: #FFFFFF;
+    color: var(--neutral-0);
 
     transition: all 0.1s ease;
     cursor: pointer;
@@ -40,12 +40,12 @@ button.add__button:before {
 }
 
 button.add__button:hover {
-    background: rgba(82, 97, 254, 1);
+    background: var(--primary-400);
 }
 
 button.add__button:active {
-    background: #3348FF;
-    box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.12);
+    background: var(--primary-500);
+    box-shadow: inset 0 4px 12px var(--neutral-400);
 }
 
 @media(max-width: 600px) {

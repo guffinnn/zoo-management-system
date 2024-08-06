@@ -6,7 +6,7 @@ li.list__point {
     align-items: flex-start;
     padding: 2px 12px;
 
-    color: #14181F;
+    color: var(--neutral-900);
 
     width: 240px;
     height: 44px;
@@ -20,7 +20,7 @@ div.content {
     font-size: 15px;
     line-height: 21px;
 
-    color: #14181F;
+    color: var(--neutral-900);
 
     display: flex;
     flex-direction: row;
@@ -38,13 +38,13 @@ div.content {
 
 div.content.active,
 li.list__point:hover div.content.active {
-    background: #E0EDFF;
-    color: #3348FF;
+    background: var(--primary-200);
+    color: var(--primary-500);
 }
 
 li.list__point:hover div.content {
-    color: #14181F;
-    background: #EDF0F2;
+    color: var(--neutral-900);
+    background: var(--neutral-100);
 }
 
 li.list__point:nth-child(7) {
@@ -64,7 +64,7 @@ li.list__point:nth-child(7):before {
 
     margin: 14px 0;
 
-    border-top: 1px solid #DCE0E5;
+    border-top: 1px solid var(--neutral-200);
 }
 
 @media(max-width: 600px) {
