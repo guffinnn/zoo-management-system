@@ -5,18 +5,16 @@ import medicine from '@assets/medicine.jpeg';
 import employee from '@assets/zookeeper.jpeg';
 import Card from '@components/Card/Card';
 import Header from '@components/Header/Header';
+import { PAGE_TITLE } from '@constants/pages.ts';
 import { JSX } from 'react';
 
 function Home(): JSX.Element {
   return (
     <>
-      {/*HEADER COMPONENT*/}
-      <Header pageTitle="Главная страница" />
-      {/*SECTION COMPONENT*/}
+      <Header pageTitle={PAGE_TITLE.HOME} />
       <section className="section">
         <div className="cards">
           <div className="cards__fluid">
-            {/*CARDS COMPONENTS*/}
             <Card
               maskColor="green"
               info="Животные"

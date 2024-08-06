@@ -13,9 +13,7 @@ function App(): JSX.Element {
 
   return (
     <>
-      {/*ASIDE COMPONENT*/}
       <AsideNavBar />
-      {/*MAIN COMPONENT*/}
       <main className={`main ${isOpen ? 'open' : ''}`}>
         <Router>
           <Routes>
