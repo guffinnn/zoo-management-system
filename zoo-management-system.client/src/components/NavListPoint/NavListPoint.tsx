@@ -26,7 +26,6 @@ function NavListPoint({
 
   return (
     <>
-      {/*NAV_LIST_POINT COMPONENT*/}
       <li key={componentKey} className="list__point">
         <a href={pageItem.link} target="_self">
           <div

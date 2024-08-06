@@ -16,12 +16,10 @@ function Footer(): JSX.Element {
 
   return (
     <>
-      {/*FOOTER COMPONENT*/}
       <footer className="footer">
         <div className="burger__menu" onClick={handleClick}>
           <img className="burger__icon" src={burger} alt="Меню" />
         </div>
-        {/*LINK TO AUTH MODAL*/}
         <div className="footer">
           <div className="div__status__content">
             <div className="content__image">

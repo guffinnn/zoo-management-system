@@ -10,7 +10,6 @@ interface PrimaryButtonProps {
 function PrimaryButton({ name, linkTo }: PrimaryButtonProps): JSX.Element {
   return (
     <div className="add__button__container">
-      {/*LINK TO ADD MODAL*/}
       <a href={linkTo}>
         <button className="add__button">{name}</button>
       </a>
