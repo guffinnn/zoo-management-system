@@ -19,25 +19,25 @@ div.page__content.table__content {
 
 div.page__content::-webkit-scrollbar-track  {
     border-radius: 10px;
-    background-color: rgba(245, 245, 245, 0);
+    background-color: #F5F5F500;
 }
 
 div.page__content::-webkit-scrollbar  {
     width: 6px;
     height: 6px;
-    background-color: rgba(245, 245, 245, 0.3);
+    background-color: #F5F5F54C;
 }
 
 div.page__content::-webkit-scrollbar-thumb  {
     border-radius: 10px;
-    background-color: rgb(237, 240, 242);
+    background-color: #EDF0F2FF;
 }
 
 @media(max-width: 500px) {
     div.page__content::-webkit-scrollbar  {
         width: 4px;
         height: 4px;
-        background-color: rgba(245, 245, 245, 0);
+        background-color: #F5F5F500;
     }
 }
 

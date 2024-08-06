@@ -11,9 +11,9 @@ div.search__box__container {
     height: 40px;
     margin: 10px 0 0 20px;
 
-    background: #FFFFFF;
-    border: 1px solid #DCE0E5;
-    box-shadow: 0 1px 2px rgba(128, 128, 128, 0.12);
+    background: var(--neutral-0);
+    border: 1px solid var(--neutral-200);
+    box-shadow: 0 1px 2px var(--neutral-400);
     border-radius: 8px;
 
     transition: all 0.1s ease;
@@ -33,11 +33,11 @@ div.search__box__container:before {
 }
 
 div.search__box__container.clicked {
-    border: 2px solid #3348FF !important;
+    border: 2px solid var(--primary-500) !important;
 }
 
 div.search__box__container:hover {
-    border: 1px solid #B6C1CA;
+    border: 1px solid var(--neutral-400);
 }
 
 input.search__box {
@@ -53,14 +53,14 @@ input.search__box {
     min-width: 315px;
     height: 40px;
 
-    background: rgba(255, 255, 255, 0);
+    background: #FFFFFF00;
 
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 140%;
 
-    color: #14181F;
+    color: var(--neutral-900);
 }
 
 @media(max-width: 600px) {

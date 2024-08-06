@@ -1,6 +1,7 @@
 import './NavListPoint.css';
 
 import { JSX } from 'react';
+import { Link } from 'react-router-dom';
 
 interface ListPoint {
   componentKey: number;
@@ -26,16 +27,15 @@ function NavListPoint({
 
   return (
     <>
-      {/*NAV_LIST_POINT COMPONENT*/}
       <li key={componentKey} className="list__point">
-        <a href={pageItem.link} target="_self">
+        <Link to={pageItem.link}>
           <div
             className={`content ${isActive ? 'active' : ''}`}
             onClick={clickHandler}
           >
             {pageItem.name}
           </div>
-        </a>
+        </Link>
       </li>
     </>
   );
