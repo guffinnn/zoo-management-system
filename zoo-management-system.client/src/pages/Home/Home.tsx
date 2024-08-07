@@ -9,16 +9,23 @@ import Header from '@components/Header/Header';
 import { PAGE_TITLE } from '@constants/pages.ts';
 import { PATH } from '@constants/paths.ts';
 import { RootState } from '@store/store.ts';
-import { JSX } from 'react';
-import { useSelector } from 'react-redux';
+import { setCloseAnimation } from '@utils/setCloseAnimation.ts';
+import { JSX, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Home(): JSX.Element {
   const isOpen = useSelector((state: RootState) => state.menu.isOpen);
+  const isClosing = useSelector((state: RootState) => state.menu.isClosing);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setCloseAnimation({ isClosing, dispatch });
+  }, [isClosing, dispatch]);
 
   return (
     <>
       <AsideNavBar />
-      <main className={`main ${isOpen ? 'open' : ''}`}>
+      <main className={`main ${isOpen && 'open'} ${isClosing && 'close'}`}>
         <Header pageTitle={PAGE_TITLE.HOME} />
         <section className="section">
           <div className="cards">

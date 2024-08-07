@@ -7,3 +7,8 @@ export interface Animal {
   photo: string;
   actions: string;
 }
+
+export interface Column {
+  name: string;
+  type: string;
+}

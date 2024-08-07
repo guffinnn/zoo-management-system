@@ -1,4 +1,5 @@
 import { Animal } from '@custom-types/database/animal.ts';
+import { Feeding } from '@custom-types/database/feeding.ts';
 
 export const ANIMALS: Animal[] = [
   {
@@ -19,4 +20,22 @@ export const ANIMALS: Animal[] = [
     photo: 'img.png',
     actions: '',
   },
+];
+
+export const FEEDING: Feeding[] = [
+  { time: 7, animals: [2, 3, 6, 7] },
+  { time: 8, animals: [1, 4, 5] },
+  { time: 9, animals: [2] },
+  { time: 10, animals: [] },
+  { time: 11, animals: [2, 3] },
+  { time: 12, animals: [1, 5] },
+  { time: 13, animals: [2, 4, 7] },
+  { time: 14, animals: [6] },
+  { time: 15, animals: [2, 3] },
+  { time: 16, animals: [1, 4] },
+  { time: 17, animals: [5] },
+  { time: 18, animals: [2, 3] },
+  { time: 19, animals: [6] },
+  { time: 20, animals: [7] },
+  { time: 21, animals: [1, 4, 5] },
 ];

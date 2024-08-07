@@ -92,6 +92,11 @@
     background: none;
 }
 
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
     display: grid;
     width: 100vw;
@@ -132,16 +137,40 @@ main.open {
     grid-row: 2 / 3;
 }
 
-@keyframes open_menu {
+@keyframes openMenu {
     0% {
         opacity: 0;
-        scale: 1.5;
+        transform: translateY(-150%);
+    }
+
+    55% {
+        opacity: 1;
+        transform: translateY(15%);
     }
 
     100% {
-        opacity: 1;
-        scale: 1;
+        transform: translateY(0);
     }
+}
+
+@keyframes closeMenu {
+    0% {
+        transform: translateY(0);
+    }
+
+    45% {
+        opacity: 1;
+        transform: translateY(15%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-150%);
+    }
+}
+
+td, th {
+    cursor: default;
 }
 
 img {

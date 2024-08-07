@@ -83,3 +83,25 @@ img.card__background {
     object-fit: cover;
     z-index: 0;
 }
+
+@media (hover: none), (pointer: coarse) {
+    div.card,
+    div.cards__fluid:hover > :not(:hover) {
+        transition: none;
+    }
+
+    div.card:hover,
+    div.card:focus {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    div.card:active {
+        opacity: 0.5;
+    }
+
+    div.cards__fluid:hover > :not(:hover),
+    div.cards__fluid:focus > :not(:focus) {
+        opacity: 1;
+    }
+}

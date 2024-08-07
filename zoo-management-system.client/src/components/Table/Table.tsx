@@ -2,8 +2,7 @@ import './Table.css';
 
 import Tbody from '@components/Table/Tbody/Tbody';
 import Thead from '@components/Table/Thead/Thead';
-import { Column } from '@custom-types/column.ts';
-import { Animal } from '@custom-types/database/animal.ts';
+import { Animal, Column } from '@custom-types/database/animal.ts';
 import { JSX } from 'react';
 
 export interface TableProps {
