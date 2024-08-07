@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0fc181ec-474b-4880-a530-4ad3db44607d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/Oddval-SemiBold-Cjd3NbdL.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/Oddval-SemiBold-DcdzBV-9.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/gibbon-BWKChWMi.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/index-BIAYrmnB.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/index-Gac67evI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/medicine-D4GOTl9X.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/user-icon-BXfRDfKK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/vite-DcBtz0py.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/zookeeper-CBZcmjx4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vite.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="docs" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2hvQvAlsh5SVuY5n9VORW0xSCiA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;6df7d965&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/мои конспекты/4-й курс/Рабочее место работника зоопарка/zoo-management-system/zoo-management-system.client/src/constants/pages.ts&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.deploy.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;npm.prepare.executor&quot;: &quot;Run&quot;,
+    &quot;npm.preview.executor&quot;: &quot;Run&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\мои конспекты\\4-й курс\\Рабочее место работника зоопарка\\zoo-management-system\\zoo-management-system.client\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\мои конспекты\4-й курс\Рабочее место работника зоопарка\zoo-management-system\zoo-management-system.client" />
+      <recent name="D:\мои конспекты\4-й курс\Рабочее место работника зоопарка\zoo-management-system\zoo-management-system.client\src" />
+      <recent name="D:\мои конспекты\4-й курс\Рабочее место работника зоопарка\zoo-management-system\zoo-management-system.client\public" />
+    </key>
+    <key name="es6.move.members.recent.items">
+      <recent name="D:\мои конспекты\4-й курс\Рабочее место работника зоопарка\zoo-management-system\zoo-management-system.client\src\types\database\animal.ts" />
+      <recent name="D:\мои конспекты\4-й курс\Рабочее место работника зоопарка\zoo-management-system\zoo-management-system.client\src\constants\testValues.ts" />
+      <recent name="D:\мои конспекты\4-й курс\Рабочее место работника зоопарка\zoo-management-system\zoo-management-system.client\src\constants\tables\animal.tsx" />
+      <recent name="D:\мои конспекты\4-й курс\Рабочее место работника зоопарка\zoo-management-system\zoo-management-system.client\src\types\database\animal.tsx" />
+      <recent name="D:\мои конспекты\4-й курс\Рабочее место работника зоопарка\zoo-management-system\zoo-management-system.client\src\types\column.tsx" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="preview" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.lint" />
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.preview" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-2e7d6887c066-JavaScript-WS-241.15989.47" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0fc181ec-474b-4880-a530-4ad3db44607d" name="Changes" comment="" />
+      <created>1718472299853</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718472299853</updated>
+      <workItem from="1718472300786" duration="177000" />
+      <workItem from="1718541978976" duration="6176000" />
+      <workItem from="1718620993886" duration="3402000" />
+      <workItem from="1718633569803" duration="280000" />
+      <workItem from="1718647883068" duration="679000" />
+      <workItem from="1719647295502" duration="645000" />
+      <workItem from="1719752162803" duration="65000" />
+      <workItem from="1720624762324" duration="1522000" />
+      <workItem from="1720685172074" duration="3486000" />
+      <workItem from="1720714851414" duration="64000" />
+      <workItem from="1720757405988" duration="573000" />
+      <workItem from="1720786320402" duration="5065000" />
+      <workItem from="1720862380166" duration="1606000" />
+      <workItem from="1720876363603" duration="2803000" />
+      <workItem from="1720973756291" duration="11000" />
+      <workItem from="1721474977123" duration="11987000" />
+      <workItem from="1721571299610" duration="864000" />
+      <workItem from="1721647846226" duration="15740000" />
+      <workItem from="1721726740225" duration="191000" />
+      <workItem from="1721728853521" duration="1017000" />
+      <workItem from="1721729924929" duration="617000" />
+      <workItem from="1721732550209" duration="48000" />
+      <workItem from="1721738416994" duration="56000" />
+      <workItem from="1721740874617" duration="40000" />
+      <workItem from="1722265214165" duration="41000" />
+      <workItem from="1722335160652" duration="27000" />
+      <workItem from="1722852859952" duration="11930000" />
+      <workItem from="1722871909680" duration="7474000" />
+      <workItem from="1722936045376" duration="17553000" />
+      <workItem from="1723022696472" duration="12527000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
