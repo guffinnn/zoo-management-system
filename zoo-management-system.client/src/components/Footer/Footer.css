@@ -171,7 +171,6 @@ div.content__info {
         display: flex;
         justify-content: center;
         align-items: center;
-        /* bottom: 50%; */
     }
 
     div.burger__menu:active nav {

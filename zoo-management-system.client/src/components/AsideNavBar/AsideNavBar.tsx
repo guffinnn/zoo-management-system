@@ -12,15 +12,8 @@ import { useLocation } from 'react-router-dom';
 function AsideNavBar(): JSX.Element {
   const [activeKey, setActiveKey] = useState<number | null>(null);
   const isOpen = useSelector((state: RootState) => state.menu.isOpen);
+  const isClosing = useSelector((state: RootState) => state.menu.isClosing);
   const location = useLocation();
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add('open');
-    } else {
-      document.body.classList.remove('open');
-    }
-  }, [isOpen]);
 
   useEffect(() => {
     setActiveKeyByLocation({
@@ -31,8 +24,10 @@ function AsideNavBar(): JSX.Element {
 
   return (
     <>
-      <aside className={`aside ${isOpen ? 'open' : ''}`}>
-        <nav className={`aside__nav ${isOpen ? 'open' : ''}`}>
+      <aside className={`aside ${isOpen && 'open'} ${isClosing && 'close'}`}>
+        <nav
+          className={`aside__nav ${isOpen && 'open'} ${isClosing && 'close'}`}
+        >
           <ul className="aside__ul__list">
             {LIST_ROWS.map((item, index) => (
               <NavListPoint

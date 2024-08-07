@@ -3,15 +3,21 @@ import './Footer.css';
 import burger from '@assets/burger.svg';
 import select from '@assets/select-arrow.svg';
 import user from '@assets/user-icon.png';
-import { toggleMenu } from '@store/menuSlice';
+import { closeMenu, openMenu } from '@store/menuSlice';
+import { RootState } from '@store/store.ts';
 import { JSX } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Footer(): JSX.Element {
   const dispatch = useDispatch();
+  const isOpen = useSelector((state: RootState) => state.menu.isOpen);
 
   const handleClick = () => {
-    dispatch(toggleMenu());
+    if (isOpen) {
+      dispatch(closeMenu());
+    } else {
+      dispatch(openMenu());
+    }
   };
 
   return (

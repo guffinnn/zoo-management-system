@@ -123,3 +123,22 @@ tbody .delete:before {
 tbody .edit:after {
     content: url(../../assets/edit.svg);
 }
+
+@media (hover: none), (pointer: coarse) {
+    tbody tr,
+    tbody tr td {
+        transition: none;
+    }
+
+    tbody tr:hover > :not(:hover),
+    tbody tr td:hover,
+    tbody tr:focus > :not(:focus),
+    tbody tr td:focus {
+        background: var(--neutral-0);
+    }
+
+    tbody tr:active > :not(:active),
+    tbody tr td:active {
+        background: #3348FF14;
+    }
+}
