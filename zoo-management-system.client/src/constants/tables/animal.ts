@@ -1,4 +1,4 @@
-import { Column } from '@custom-types/column.ts';
+import { Column } from '@custom-types/database/animal.ts';
 
 export const ANIMAL_TABLE_COLUMNS: Column[] = [
   { name: 'Кличка', type: 'text' },
