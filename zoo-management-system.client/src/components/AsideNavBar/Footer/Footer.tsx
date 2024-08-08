@@ -3,7 +3,7 @@ import './Footer.css';
 import burger from '@assets/burger.svg';
 import select from '@assets/select-arrow.svg';
 import user from '@assets/user-icon.png';
-import { closeMenu, openMenu } from '@store/menuSlice';
+import { closeMenu, openMenu } from '@store/menuSlice.ts';
 import { RootState } from '@store/store.ts';
 import { JSX } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
