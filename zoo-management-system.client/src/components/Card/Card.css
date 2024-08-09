@@ -1,5 +1,5 @@
 /*CARD*/
-div.card {
+div.card_my {
     position: relative;
     width: 350px;
     height: 190px;
@@ -9,7 +9,7 @@ div.card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-div.card:hover {
+div.card_my:hover {
     transform: translateY(-15px);
 }
 

@@ -92,6 +92,11 @@
     background: none;
 }
 
+::after,
+::before {
+    box-sizing: content-box;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -180,10 +185,6 @@ main.open {
         opacity: 0;
         transform: translateY(-150%);
     }
-}
-
-td, th {
-    cursor: default;
 }
 
 img {

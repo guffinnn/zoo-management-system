@@ -1,4 +1,20 @@
 /*ANIMALS*/
+p, .p-2 {
+    padding: 0;
+    margin: 0;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    --bs-btn-padding-y: 0;
+    --bs-btn-padding-x: 0;
+    --bs-btn-font-size: 0;
+    --bs-btn-border-radius: var(--bs-border-radius-sm);
+}
+
+.table {
+    --bs-table-bg: none;
+}
+
 .page__content {
     box-sizing: border-box;
 
