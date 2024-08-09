@@ -1,3 +1,4 @@
+import AddDataModal from '@components/modals/AddDataModal/AddDataModal.tsx';
 import AuthModal from '@components/modals/AuthModal/AuthModal.tsx';
 import StatusModal from '@components/modals/StatusModal/StatusModal.tsx';
 import { JSX, useEffect } from 'react';
@@ -20,6 +21,7 @@ function Modal(): JSX.Element {
     <>
       {id === 'auth' && <AuthModal />}
       {id === 'status' && <StatusModal />}
+      {id === 'add' && <AddDataModal />}
     </>
   );
 }
