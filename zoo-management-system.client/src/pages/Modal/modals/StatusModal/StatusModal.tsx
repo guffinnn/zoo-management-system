@@ -1,5 +1,6 @@
 import error from '@assets/error.svg';
 import success from '@assets/success.svg';
+import { PATH } from '@constants/paths.ts';
 import {
   Button,
   ButtonContainer,
@@ -9,8 +10,7 @@ import {
   StatusImage,
   StatusImageContainer,
   StatusInfo,
-} from '@components/modals/StatusModal/styled.ts';
-import { PATH } from '@constants/paths.ts';
+} from '@pages/Modal/modals/StatusModal/styled.ts';
 import { JSX } from 'react';
 import { useNavigate } from 'react-router-dom';
 

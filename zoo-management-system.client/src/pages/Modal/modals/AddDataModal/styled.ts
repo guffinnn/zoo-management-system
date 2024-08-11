@@ -203,7 +203,7 @@ export const TextAreaContainer = styled.div`
 
   &::after {
     box-sizing: border-box;
-    content: url('../../../assets/resizer.svg');
+    content: url('../../../../assets/resizer.svg');
     position: absolute;
     bottom: 14px;
     right: 4px;

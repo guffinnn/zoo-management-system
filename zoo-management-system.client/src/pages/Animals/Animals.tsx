@@ -6,6 +6,7 @@ import PrimaryButton from '@components/PrimaryButton/PrimaryButton';
 import SearchBox from '@components/SearchBox/SearchBox';
 import Table from '@components/Table/Table';
 import { PAGE_TITLE } from '@constants/pages.ts';
+import { PATH } from '@constants/paths.ts';
 import { ANIMAL_TABLE_COLUMNS } from '@constants/tables/animal.ts';
 import { ANIMALS } from '@constants/testValues.ts';
 import { ADD } from '@constants/values.ts';
@@ -28,7 +29,7 @@ function Animals(): JSX.Element {
       <AsideNavBar />
       <main className={`main ${isOpen && 'open'} ${isClosing && 'close'}`}>
         <Header pageTitle={PAGE_TITLE.ANIMALS}>
-          <PrimaryButton name={ADD.ANIMAL} linkTo={'#'} />
+          <PrimaryButton name={ADD.ANIMAL} linkTo={PATH.TO_ADD_MODAL} />
         </Header>
         <section className="section">
           <SearchBox />

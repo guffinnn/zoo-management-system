@@ -30,13 +30,13 @@ export const StatusImageContainer = styled.div`
 
   &.error {
     background:
-      url(../../../assets/error.svg) no-repeat center center,
+      url(../../../../assets/error.svg) no-repeat center center,
       var(--danger-200);
     background-size: contain;
   }
 
   &.error::before {
-    content: url(../../../assets/error.svg);
+    content: url(../../../../assets/error.svg);
     width: 100%;
     height: 100%;
     position: absolute;
@@ -48,7 +48,7 @@ export const StatusImageContainer = styled.div`
 
   &.success {
     background:
-      url(../../../assets/success.svg) no-repeat center center,
+      url(../../../../assets/success.svg) no-repeat center center,
       var(--success-200);
     background-size: contain;
   }

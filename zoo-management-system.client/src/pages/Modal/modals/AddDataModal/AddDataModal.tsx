@@ -7,9 +7,16 @@ import {
   MyFormInput,
   MyFormLabel,
   MyInputGroup,
-  MyInputGroupText, SelectWithLabel, TextArea, TextAreaContainer,
-} from '@components/modals/AddDataModal/styled.ts';
-import { Form, ModalHeading, SubmitButton } from '@components/modals/AuthModal/styled.ts';
+  MyInputGroupText,
+  SelectWithLabel,
+  TextArea,
+  TextAreaContainer,
+} from '@pages/Modal/modals/AddDataModal/styled.ts';
+import {
+  Form,
+  ModalHeading,
+  SubmitButton,
+} from '@pages/Modal/modals/AuthModal/styled.ts';
 import { JSX } from 'react';
 
 function AddDataModal(): JSX.Element {

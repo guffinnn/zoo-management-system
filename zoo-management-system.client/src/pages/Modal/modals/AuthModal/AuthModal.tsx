@@ -1,3 +1,5 @@
+import { PATH } from '@constants/paths.ts';
+import { DEFAULT_MIN_LENGTH, ERROR } from '@constants/values.ts';
 import {
   Form,
   Input,
@@ -8,9 +10,7 @@ import {
   NotifyFrame,
   NotifyText,
   SubmitButton,
-} from '@components/modals/AuthModal/styled.ts';
-import { PATH } from '@constants/paths.ts';
-import { DEFAULT_MIN_LENGTH, ERROR } from '@constants/values.ts';
+} from '@pages/Modal/modals/AuthModal/styled.ts';
 import { useFormik } from 'formik';
 import { JSX } from 'react';
 import { useNavigate } from 'react-router-dom';

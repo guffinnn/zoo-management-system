@@ -1,6 +1,7 @@
-import AddDataModal from '@components/modals/AddDataModal/AddDataModal.tsx';
-import AuthModal from '@components/modals/AuthModal/AuthModal.tsx';
-import StatusModal from '@components/modals/StatusModal/StatusModal.tsx';
+import AddDataModal from '@pages/Modal/modals/AddDataModal/AddDataModal.tsx';
+import AuthModal from '@pages/Modal/modals/AuthModal/AuthModal.tsx';
+import StatusModal from '@pages/Modal/modals/StatusModal/StatusModal.tsx';
+import ValidationModal from '@pages/Modal/modals/ValidationModal/ValidationModal.tsx';
 import { JSX, useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 
@@ -22,6 +23,7 @@ function Modal(): JSX.Element {
       {id === 'auth' && <AuthModal />}
       {id === 'status' && <StatusModal />}
       {id === 'add' && <AddDataModal />}
+      {id === 'validation' && <ValidationModal />}
     </>
   );
 }
