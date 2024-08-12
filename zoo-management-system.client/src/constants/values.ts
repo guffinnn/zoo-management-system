@@ -14,5 +14,6 @@ export const ERROR = {
   REQUIRED: 'Обязательное поле',
   EMAIL_FORMAT: 'Неверный формат электронной почты',
   PASSWORD_MIN_LENGTH: 'Пароль должен содержать минимум 6 символов',
+  DATE_CONFLICT: 'Дата рождения не может быть позже даты зачисления',
 };
 export const DEFAULT_MIN_LENGTH = 6;
