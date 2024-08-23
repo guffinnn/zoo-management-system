@@ -21,10 +21,17 @@ export const Theading = styled.th`
     min-width: 0;
 
     background-color: var(--neutral-50);
+    border-bottom: 1px solid var(--neutral-400);
   }
 
   &.head__cell {
+    background: var(--neutral-0);
     border-bottom: 1px solid var(--neutral-400);
+    border-right: 1px solid var(--neutral-200);
+  }
+
+  &.head__cell:nth-last-child(-n + 1) {
+    border-right: none;
   }
 `;
 

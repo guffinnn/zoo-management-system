@@ -1,0 +1,52 @@
+p, .p-2 {
+    padding: 0;
+    margin: 0;
+}
+
+.form-select:focus, .form-control:focus {
+    box-shadow: none;
+    border: 2px solid #3348FF;
+}
+
+.form-check-input:checked {
+    box-shadow: none;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-10px, -50%);
+    z-index: 2;
+}
+
+input[type="date"] {
+    position: relative;
+    z-index: 1;
+}
+
+input[type="date"]::after {
+    content: url(/src/assets/calendar.svg);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: 3px;
+    transform: translate(-10px, -50%);
+    z-index: 0;
+}
+
+textarea {
+    width: 323px;
+    max-width: 323px;
+    min-width: 323px;
+}
+
+textarea::-webkit-resizer {
+    opacity: 1;
+    z-index: 2;
+}

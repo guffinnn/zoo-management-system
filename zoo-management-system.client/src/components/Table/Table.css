@@ -12,6 +12,7 @@ table.table {
     height: 100%;
 
     background: var(--neutral-0);
+    margin-bottom: 0;
 }
 
 thead, tbody {
@@ -63,13 +64,14 @@ tbody.tbody tr {
     min-height: 44px;
 }
 
-thead th {
-    background: var(--neutral-50);
+thead th.default,
+thead th.time {
+    background: var(--neutral-50) !important;
     border-right: 1px solid var(--neutral-200);
 }
 
 tr:nth-last-child(-n + 1) {
-    border-bottom: 0;
+    border-bottom: solid 1px var(--neutral-200);
 }
 
 tbody,
@@ -122,6 +124,24 @@ tbody .delete:before {
 
 tbody .edit:after {
     content: url(../../assets/edit.svg);
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: none;
+    border-bottom-width: 1px;
+}
+
+.table>:not(caption)>*>* {
+    padding: 8px;
+    color: var(--neutral-900);
+    background-color: var(--neutral-0);
+    border-bottom-width: 0;
+    box-shadow: none;
+}
+
+td, th {
+    cursor: default;
 }
 
 @media (hover: none), (pointer: coarse) {

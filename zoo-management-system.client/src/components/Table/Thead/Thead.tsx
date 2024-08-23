@@ -8,7 +8,7 @@ function Thead({ columns }: Pick<TableProps, 'columns'>): JSX.Element {
   return (
     <tr>
       {columns.map((column, index) => (
-        <th key={index}>
+        <th key={index} className="default">
           <p className={`head__cell__content ${column.type}`}>{column.name}</p>
         </th>
       ))}

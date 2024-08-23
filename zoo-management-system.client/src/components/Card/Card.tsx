@@ -20,7 +20,7 @@ function Card({
 }: CardProps): JSX.Element {
   return (
     <>
-      <div className="card">
+      <div className="card_my">
         <Link to={link}>
           <div className={`card__mask ${maskColor}`}>
             <div className="card__content">

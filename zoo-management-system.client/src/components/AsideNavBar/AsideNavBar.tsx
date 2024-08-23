@@ -1,7 +1,7 @@
 import './AsideNavBar.css';
 
-import Footer from '@components/Footer/Footer';
-import NavListPoint from '@components/NavListPoint/NavListPoint';
+import Footer from '@components/AsideNavBar/Footer/Footer';
+import NavListPoint from '@components/AsideNavBar/NavListPoint/NavListPoint';
 import { LIST_ROWS } from '@constants/pages.ts';
 import { setActiveKeyByLocation } from '@helpers/asideNavBarHelpers.ts';
 import { RootState } from '@store/store';
