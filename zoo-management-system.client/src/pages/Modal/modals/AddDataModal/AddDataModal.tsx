@@ -14,7 +14,7 @@ import { Element } from '@pages/Modal/modals/elements/Element.tsx';
 import { JSX } from 'react';
 
 function AddDataModal(): JSX.Element {
-  const fields = fieldConfig['animal'];
+  const fields = fieldConfig['workTime'];
 
   return (
     <ModalContainer>
