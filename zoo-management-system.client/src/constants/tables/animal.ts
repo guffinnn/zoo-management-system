@@ -1,9 +1,6 @@
 import { ERROR } from '@constants/values.ts';
 import { Column } from '@custom-types/database/animal.ts';
-import {
-  ElementType,
-  ElementVariant,
-} from '@pages/Modal/modals/elements/types.ts';
+import { ElementType, ElementVariant } from '@pages/Modal/modals/elements/types.ts';
 import * as Yup from 'yup';
 
 export const ANIMAL_TABLE_COLUMNS: Column[] = [
@@ -67,11 +64,12 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
   ],
   workTime: [
     {
-      type: ElementType.select,
-      id: 'employee',
-      label: 'Сотрудник:',
-      options: [{ value: 'null', text: 'Выберите себя' }],
+      type: ElementType.label,
+      id: '_employee',
+      htmlFor: 'employee',
+      children: 'Сотрудник',
     },
+    { type: ElementType.input, id: 'employee', placeholder: 'Выберите себя' },
     {
       type: ElementType.select,
       id: 'type_of_work',
@@ -84,6 +82,17 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       label: 'Статус:',
       options: [{ value: 'null', text: 'Выполнено' }],
     },
-    { type: ElementType.input, id: 'time', placeholder: 'Время, ч.:' },
+    {
+      type: ElementType.label,
+      id: '_time',
+      htmlFor: 'time',
+      children: 'Время, ч.',
+    },
+    { type: ElementType.input, id: 'time', placeholder: 'Укажите время' },
+    {
+      type: ElementType.checkbox,
+      id: 'request',
+      children: 'Запросить подтверждение работы',
+    },
   ],
 };
