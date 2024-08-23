@@ -65,4 +65,25 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       placeholder: 'Опишите мед. обследования',
     },
   ],
+  workTime: [
+    {
+      type: ElementType.select,
+      id: 'employee',
+      label: 'Сотрудник:',
+      options: [{ value: 'null', text: 'Выберите себя' }],
+    },
+    {
+      type: ElementType.select,
+      id: 'type_of_work',
+      label: 'Вид работы:',
+      options: [{ value: 'null', text: 'Выберите работу' }],
+    },
+    {
+      type: ElementType.select,
+      id: 'status',
+      label: 'Статус:',
+      options: [{ value: 'null', text: 'Выполнено' }],
+    },
+    { type: ElementType.input, id: 'time', placeholder: 'Время, ч.:' },
+  ],
 };
