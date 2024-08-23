@@ -1,3 +1,4 @@
+import { CheckBox } from '@pages/Modal/modals/elements/CheckBox/CheckBox.tsx';
 import { DateInput } from '@pages/Modal/modals/elements/DateInput/DateInput.tsx';
 import { Input } from '@pages/Modal/modals/elements/Input/Input.tsx';
 import { Label } from '@pages/Modal/modals/elements/Label/Label.tsx';
@@ -25,5 +26,7 @@ export function Element({ element }: ElementProps): JSX.Element {
       return <TextArea {...element} />;
     case ElementType.select:
       return <Select {...element} />;
+    case ElementType.checkbox:
+      return <CheckBox {...element}>{element.children}</CheckBox>;
   }
 }

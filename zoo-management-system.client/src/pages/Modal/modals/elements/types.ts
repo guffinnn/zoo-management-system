@@ -9,6 +9,7 @@ export enum ElementType {
   dateInput = 'DateInput',
   textArea = 'TextArea',
   select = 'Select',
+  checkbox = 'CheckBox',
 }
 
 export type ElementLabel = ElementBase<
@@ -50,9 +51,17 @@ export type ElementSelect = ElementBase<
   }
 >;
 
+export type ElementCheckBox = ElementBase<
+  ElementType.checkbox,
+  {
+    children: string;
+  }
+>;
+
 export type ElementVariant =
   | ElementLabel
   | ElementInput
   | ElementDateInput
   | ElementTextArea
-  | ElementSelect;
+  | ElementSelect
+  | ElementCheckBox;
