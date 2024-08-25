@@ -4,9 +4,9 @@ import {
   StyledFormCheckInput,
   StyledFormCheckLabel,
 } from '@pages/Modal/modals/elements/CheckBox/styled.ts';
-import { StyledInputWrapper } from '@pages/Modal/modals/elements/Input/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
+import { ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface CheckBoxProps {
   id: string;
@@ -19,7 +19,7 @@ export function CheckBox({ id, children }: CheckBoxProps): JSX.Element {
   const isValidField = `${touched[id] && errors[id] ? 'error' : null}`;
 
   return (
-    <StyledInputWrapper className={isValidField} error={`${errors[id]}`}>
+    <ErrorWrapper className={isValidField} error={`${errors[id]}`}>
       <StyledFormCheck>
         <StyledFormCheckInput
           id={id}
@@ -31,6 +31,6 @@ export function CheckBox({ id, children }: CheckBoxProps): JSX.Element {
         />
         <StyledFormCheckLabel htmlFor={id}>{children}</StyledFormCheckLabel>
       </StyledFormCheck>
-    </StyledInputWrapper>
+    </ErrorWrapper>
   );
 }

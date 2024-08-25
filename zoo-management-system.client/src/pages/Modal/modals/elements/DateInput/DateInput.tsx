@@ -1,12 +1,8 @@
 import { FormikFields } from '@constants/tables/global.ts';
-import {
-  StyledGroup,
-  StyledGroupText,
-  StyledInputWithLabel,
-} from '@pages/Modal/modals/AddDataModal/styled.ts';
-import { StyledInputWrapper } from '@pages/Modal/modals/elements/Input/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
+import { StyledGroup, StyledGroupText, ErrorWrapper } from '@pages/Modal/styled.ts';
+import { StyledInputWithLabel } from '@pages/Modal/modals/elements/DateInput/styled.ts';
 
 interface DateInputProps {
   id: string;
@@ -24,7 +20,7 @@ export function DateInput({
   const isValidField = `${touched[id] && errors[id] ? 'error' : null}`;
 
   return (
-    <StyledInputWrapper className={isValidField} error={`${errors[id]}`}>
+    <ErrorWrapper className={isValidField} error={`${errors[id]}`}>
       <StyledGroup className={isValidField}>
         <StyledGroupText>{label}</StyledGroupText>
         <StyledInputWithLabel
@@ -37,6 +33,6 @@ export function DateInput({
           value={values[id]}
         />
       </StyledGroup>
-    </StyledInputWrapper>
+    </ErrorWrapper>
   );
 }

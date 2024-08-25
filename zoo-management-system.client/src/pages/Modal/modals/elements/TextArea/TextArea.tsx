@@ -1,11 +1,11 @@
 import { FormikFields } from '@constants/tables/global.ts';
-import { StyledInputWrapper } from '@pages/Modal/modals/elements/Input/styled.ts';
 import {
   StyledTextArea,
   TextAreaContainer,
 } from '@pages/Modal/modals/elements/TextArea/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
+import { ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface TextAreaProps {
   id: string;
@@ -18,7 +18,7 @@ export function TextArea({ id, placeholder }: TextAreaProps): JSX.Element {
   const isValidField = `${touched[id] && errors[id] ? 'error' : null}`;
 
   return (
-    <StyledInputWrapper className={isValidField} error={`${errors[id]}`}>
+    <ErrorWrapper className={isValidField} error={`${errors[id]}`}>
       <TextAreaContainer>
         <StyledTextArea
           id={id}
@@ -30,6 +30,6 @@ export function TextArea({ id, placeholder }: TextAreaProps): JSX.Element {
           className={isValidField}
         />
       </TextAreaContainer>
-    </StyledInputWrapper>
+    </ErrorWrapper>
   );
 }

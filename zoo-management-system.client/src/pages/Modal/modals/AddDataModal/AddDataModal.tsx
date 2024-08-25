@@ -7,12 +7,8 @@ import {
   FormFrame,
   ModalContainer,
 } from '@pages/Modal/modals/AddDataModal/styled.ts';
-import {
-  Form,
-  ModalHeading,
-  SubmitButton,
-} from '@pages/Modal/modals/AuthModal/styled.ts';
 import { Element } from '@pages/Modal/modals/elements/Element.tsx';
+import { Form, ModalHeading, SubmitButton } from '@pages/Modal/styled.ts';
 import { Formik } from 'formik';
 import { JSX } from 'react';
 import { useNavigate } from 'react-router-dom';

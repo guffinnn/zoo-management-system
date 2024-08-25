@@ -1,10 +1,11 @@
 import { FormikFields } from '@constants/tables/global.ts';
 import {
   StyledInput,
-  StyledInputWrapper,
+
 } from '@pages/Modal/modals/elements/Input/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
+import { ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface InputProps {
   type: string;
@@ -18,7 +19,7 @@ export function Input({ type, id, placeholder }: InputProps): JSX.Element {
   const isValidField = `${touched[id] && errors[id] ? 'error' : null}`;
 
   return (
-    <StyledInputWrapper className={isValidField} error={`${errors[id]}`}>
+    <ErrorWrapper className={isValidField} error={`${errors[id]}`}>
       <StyledInput
         type={type}
         id={id}
@@ -29,6 +30,6 @@ export function Input({ type, id, placeholder }: InputProps): JSX.Element {
         value={values[id]}
         className={isValidField}
       />
-    </StyledInputWrapper>
+    </ErrorWrapper>
   );
 }

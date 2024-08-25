@@ -1,12 +1,8 @@
 import { FormikFields } from '@constants/tables/global.ts';
-import {
-  StyledGroup,
-  StyledGroupText,
-} from '@pages/Modal/modals/AddDataModal/styled.ts';
-import { StyledInputWrapper } from '@pages/Modal/modals/elements/Input/styled.ts';
 import { StyledSelect } from '@pages/Modal/modals/elements/Select/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
+import { StyledGroup, StyledGroupText, ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface SelectProps {
   id: string;
@@ -20,7 +16,7 @@ export function Select({ id, label, options }: SelectProps): JSX.Element {
   const isValidField = `${touched[id] && errors[id] ? 'error' : null}`;
 
   return (
-    <StyledInputWrapper className={isValidField} error={`${errors[id]}`}>
+    <ErrorWrapper className={isValidField} error={`${errors[id]}`}>
       <StyledGroup className={isValidField}>
         <StyledGroupText>{label}</StyledGroupText>
         <StyledSelect
@@ -37,6 +33,6 @@ export function Select({ id, label, options }: SelectProps): JSX.Element {
           ))}
         </StyledSelect>
       </StyledGroup>
-    </StyledInputWrapper>
+    </ErrorWrapper>
   );
 }
