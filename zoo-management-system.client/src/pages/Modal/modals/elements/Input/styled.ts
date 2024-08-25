@@ -36,31 +36,3 @@ export const StyledInput = styled(FormControl)`
     border: 1px solid var(--danger-500);
   }
 `;
-
-export const StyledInputWrapper = styled.div<{ error: string }>`
-  position: relative;
-  width: 100%;
-  height: auto;
-
-  &.error::after {
-    content: '${({ error }) => (error.length > 0 ? error : null)}';
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 6px 0 0;
-    gap: 8px;
-
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-
-    width: 100%;
-    height: auto;
-
-    object-fit: contain;
-
-    color: var(--danger-500);
-  }
-`;

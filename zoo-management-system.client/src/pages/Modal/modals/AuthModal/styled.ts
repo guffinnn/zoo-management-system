@@ -19,46 +19,6 @@ export const ModalContainer = styled.div`
   border-radius: 8px;
 `;
 
-export const ModalHeading = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 20px 24px 0;
-  gap: 10px;
-
-  width: 100%;
-  height: auto;
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
-
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 140%;
-
-  color: var(--neutral-900);
-  cursor: default;
-`;
-
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px 24px;
-  gap: 20px;
-
-  width: 100%;
-  height: auto;
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
-`;
-
 export const Label = styled.label`
   display: flex;
   flex-direction: row;
@@ -141,57 +101,6 @@ export const Input = styled.input`
 
   &.error {
     border: 1px solid var(--danger-500);
-  }
-`;
-
-export const SubmitButton = styled.input`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 12px;
-  gap: 8px;
-
-  width: 100%;
-  height: 40px;
-
-  background: var(--primary-500);
-  box-shadow:
-    inset 0 7px 12px #ffffff14,
-    inset 0 -2px 2px #30303019;
-  border-radius: 8px;
-
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 140%;
-
-  color: var(--neutral-0);
-
-  transition: all 0.1s ease-in-out;
-  cursor: pointer;
-
-  &:hover {
-    background: #5261feff;
-  }
-
-  &:active {
-    background: var(--primary-500);
-    box-shadow: inset 0 4px 12px #0000001e;
-  }
-
-  @media (hover: none), (pointer: coarse) {
-    transition: none;
-
-    &:hover,
-    &:focus {
-      background: var(--primary-500);
-    }
-
-    &:active {
-      background: var(--primary-500);
-      box-shadow: inset 0 4px 12px #0000001e;
-    }
   }
 `;
 
