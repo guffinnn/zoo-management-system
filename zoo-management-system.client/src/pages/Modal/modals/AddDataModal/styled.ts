@@ -37,6 +37,15 @@ export const StyledGroup = styled(InputGroup)`
     opacity: 0.6;
     color: var(--neutral-600);
   }
+
+  &:focus {
+    border: 2px solid var(--primary-500);
+  }
+
+  &.error {
+    border-radius: 9px;
+    border: 1px solid var(--danger-500);
+  }
 `;
 
 export const StyledGroupText = styled(InputGroup.Text)`
@@ -95,4 +104,11 @@ export const StyledInputWithLabel = styled(FormControl)`
   border-radius: 8px;
 
   transition: border 0.1s ease;
+
+  &:focus {
+    border: 1px solid var(--neutral-200);
+    box-shadow:
+      inset 0 7px 12px #ffffff14,
+      inset 0 -2px 2px #30303019;
+  }
 `;
