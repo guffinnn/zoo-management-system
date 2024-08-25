@@ -51,4 +51,8 @@ export const StyledTextArea = styled.textarea`
   &:focus {
     border: 2px solid var(--primary-500);
   }
+
+  &.error {
+    border: 1px solid var(--danger-500);
+  }
 `;
