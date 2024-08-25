@@ -1,6 +1,11 @@
 import './NavListPoint.css';
 
+import { closeMenu } from '@store/menuSlice.ts';
+import { RootState } from '@store/store.ts';
+import { setCloseAnimation } from '@utils/setCloseAnimation.ts';
 import { JSX } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 interface ListPoint {
   componentKey: number;
@@ -19,23 +24,28 @@ function NavListPoint({
   setActiveKey,
 }: ListPoint): JSX.Element {
   const isActive = componentKey === activeKey;
+  const isClosing = useSelector((state: RootState) => state.menu.isClosing);
+  const dispatch = useDispatch();
 
   const clickHandler = () => {
+    // Set element isActive
     setActiveKey(isActive ? null : componentKey);
+    // Close menu after that
+    dispatch(closeMenu());
+    setCloseAnimation({ isClosing, dispatch });
   };
 
   return (
     <>
-      {/*NAV_LIST_POINT COMPONENT*/}
       <li key={componentKey} className="list__point">
-        <a href={pageItem.link} target="_self">
+        <Link to={pageItem.link}>
           <div
             className={`content ${isActive ? 'active' : ''}`}
             onClick={clickHandler}
           >
             {pageItem.name}
           </div>
-        </a>
+        </Link>
       </li>
     </>
   );

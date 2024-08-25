@@ -1,6 +1,7 @@
 import './PrimaryButton.css';
 
 import { JSX } from 'react';
+import { Link } from 'react-router-dom';
 
 interface PrimaryButtonProps {
   name: string;
@@ -10,10 +11,9 @@ interface PrimaryButtonProps {
 function PrimaryButton({ name, linkTo }: PrimaryButtonProps): JSX.Element {
   return (
     <div className="add__button__container">
-      {/*LINK TO ADD MODAL*/}
-      <a href={linkTo}>
+      <Link to={linkTo}>
         <button className="add__button">{name}</button>
-      </a>
+      </Link>
     </div>
   );
 }

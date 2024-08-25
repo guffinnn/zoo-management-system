@@ -1,0 +1,53 @@
+import AsideNavBar from '@components/AsideNavBar/AsideNavBar.tsx';
+import Calendar from '@components/Calendar/Calendar.tsx';
+import {
+  Button,
+  ButtonGroup,
+  CalendarHeaderLayout,
+  TodayInfo,
+} from '@components/Calendar/styled.ts';
+import Header from '@components/Header/Header.tsx';
+import { PAGE_TITLE } from '@constants/pages.ts';
+import { FEEDING_TABLE_COLUMNS } from '@constants/tables/feeding.ts';
+import { FEEDING } from '@constants/testValues.ts';
+import { RootState } from '@store/store.ts';
+import { getCurrentDate } from '@utils/getCurrentDate.ts';
+import { setCloseAnimation } from '@utils/setCloseAnimation.ts';
+import { JSX, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+function Feeding(): JSX.Element {
+  const isOpen = useSelector((state: RootState) => state.menu.isOpen);
+  const isClosing = useSelector((state: RootState) => state.menu.isClosing);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setCloseAnimation({ isClosing, dispatch });
+  }, [isClosing, dispatch]);
+
+  const currentDate = getCurrentDate();
+
+  return (
+    <>
+      <AsideNavBar />
+      <main className={`main ${isOpen && 'open'} ${isClosing && 'close'}`}>
+        <Header pageTitle={PAGE_TITLE.FEEDING} />
+        <section className="section">
+          <CalendarHeaderLayout>
+            <TodayInfo>{currentDate}</TodayInfo>
+            <ButtonGroup>
+              <Button>Вчера</Button>
+              <Button className={'--primary'}>Сегодня</Button>
+              <Button>Завтра</Button>
+            </ButtonGroup>
+          </CalendarHeaderLayout>
+          <div className="page__content table__content">
+            <Calendar columns={FEEDING_TABLE_COLUMNS} data={FEEDING} />
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}
+
+export default Feeding;

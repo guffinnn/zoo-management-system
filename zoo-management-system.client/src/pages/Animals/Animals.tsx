@@ -1,73 +1,43 @@
 import './Animals.css';
 
+import AsideNavBar from '@components/AsideNavBar/AsideNavBar.tsx';
 import Header from '@components/Header/Header';
 import PrimaryButton from '@components/PrimaryButton/PrimaryButton';
 import SearchBox from '@components/SearchBox/SearchBox';
 import Table from '@components/Table/Table';
-import { JSX } from 'react';
-
-interface Column {
-  name: string;
-  type: string;
-}
-
-const TABLE_COLUMNS: Column[] = [
-  { name: 'Кличка', type: 'text' },
-  { name: 'Вид', type: 'select' },
-  { name: 'Дата рождения', type: 'date' },
-  { name: 'Дата зачисления', type: 'date' },
-  { name: 'Мед. показатели', type: 'document' },
-  { name: 'Фото', type: 'eye' },
-  { name: 'Действия', type: 'edit' },
-];
-
-export interface Animal {
-  nickname: string;
-  species: string;
-  date_of_birth: string;
-  date_of_registration: string;
-  medical_indicators: string;
-  photo: string;
-  actions: string;
-}
-
-const ANIMALS: Animal[] = [
-  {
-    nickname: 'Лиля',
-    species: 'Собака',
-    date_of_birth: '01.02.1945',
-    date_of_registration: '01.09.1980',
-    medical_indicators: 'Не привит',
-    photo: 'img.png',
-    actions: '',
-  },
-  {
-    nickname: 'Манки',
-    species: 'Обезьяна',
-    date_of_birth: '10.01.2020',
-    date_of_registration: '29.05.2024',
-    medical_indicators: 'Привит',
-    photo: 'img.png',
-    actions: '',
-  },
-];
+import { PAGE_TITLE } from '@constants/pages.ts';
+import { PATH } from '@constants/paths.ts';
+import { ANIMAL_TABLE_COLUMNS } from '@constants/tables/animal.ts';
+import { ANIMALS } from '@constants/testValues.ts';
+import { ADD } from '@constants/values.ts';
+import { RootState } from '@store/store.ts';
+import { setCloseAnimation } from '@utils/setCloseAnimation.ts';
+import { JSX, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Animals(): JSX.Element {
+  const isOpen = useSelector((state: RootState) => state.menu.isOpen);
+  const isClosing = useSelector((state: RootState) => state.menu.isClosing);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    setCloseAnimation({ isClosing, dispatch });
+  }, [isClosing, dispatch]);
+
   return (
     <>
-      {/*HEADER COMPONENT*/}
-      <Header pageTitle="Журнал учета животных">
-        <PrimaryButton name={'Добавить животное'} linkTo={'#'} />
-      </Header>
-      {/*SECTION COMPONENT*/}
-      <section className="section">
-        {/*SEARCH BOX*/}
-        <SearchBox />
-        <div className="page__content table__content">
-          {/*TABLE COMPONENT*/}
-          <Table columns={TABLE_COLUMNS} data={ANIMALS} />
-        </div>
-      </section>
+      <AsideNavBar />
+      <main className={`main ${isOpen && 'open'} ${isClosing && 'close'}`}>
+        <Header pageTitle={PAGE_TITLE.ANIMALS}>
+          <PrimaryButton name={ADD.ANIMAL} linkTo={PATH.TO_ADD_MODAL} />
+        </Header>
+        <section className="section">
+          <SearchBox />
+          <div className="page__content table__content">
+            <Table columns={ANIMAL_TABLE_COLUMNS} data={ANIMALS} />
+          </div>
+        </section>
+      </main>
     </>
   );
 }

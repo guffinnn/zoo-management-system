@@ -1,4 +1,20 @@
 /*ANIMALS*/
+p, .p-2 {
+    padding: 0;
+    margin: 0;
+}
+
+.btn-group-sm>.btn, .btn-sm {
+    --bs-btn-padding-y: 0;
+    --bs-btn-padding-x: 0;
+    --bs-btn-font-size: 0;
+    --bs-btn-border-radius: var(--bs-border-radius-sm);
+}
+
+.table {
+    --bs-table-bg: none;
+}
+
 .page__content {
     box-sizing: border-box;
 
@@ -19,25 +35,25 @@ div.page__content.table__content {
 
 div.page__content::-webkit-scrollbar-track  {
     border-radius: 10px;
-    background-color: rgba(245, 245, 245, 0);
+    background-color: #F5F5F500;
 }
 
 div.page__content::-webkit-scrollbar  {
     width: 6px;
     height: 6px;
-    background-color: rgba(245, 245, 245, 0.3);
+    background-color: #F5F5F54C;
 }
 
 div.page__content::-webkit-scrollbar-thumb  {
     border-radius: 10px;
-    background-color: rgb(237, 240, 242);
+    background-color: #EDF0F2FF;
 }
 
 @media(max-width: 500px) {
     div.page__content::-webkit-scrollbar  {
         width: 4px;
         height: 4px;
-        background-color: rgba(245, 245, 245, 0);
+        background-color: #F5F5F500;
     }
 }
 

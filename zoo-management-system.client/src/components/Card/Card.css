@@ -1,5 +1,5 @@
 /*CARD*/
-div.card {
+div.card_my {
     position: relative;
     width: 350px;
     height: 190px;
@@ -9,7 +9,7 @@ div.card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-div.card:hover {
+div.card_my:hover {
     transform: translateY(-15px);
 }
 
@@ -30,22 +30,22 @@ div.card__mask {
     width: 350px;
     height: 190px;
 
-    border: 1px solid #DCE0E5;
+    border: 1px solid var(--neutral-200);
     border-radius: 8px;
 
     z-index: 1;
 }
 
 div.card__mask.green {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%), rgba(0, 168, 28, 0.2);
+    background: linear-gradient(180deg, #00000000 50%, #00000099 100%), #00A81C33;
 }
 
 div.card__mask.orange {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%), rgba(245, 135, 0, 0.2);
+    background: linear-gradient(180deg, #00000000 50%, #00000099 100%), #F5870033;
 }
 
 div.card__mask.blue {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%), rgba(51, 72, 255, 0.2);
+    background: linear-gradient(180deg, #00000000 50%, #00000099 100%), #3348FF33;
 }
 
 div.card__content {
@@ -66,7 +66,7 @@ p.card__info {
     font-size: 36px;
     line-height: 140%;
 
-    color: #FFFFFF;
+    color: var(--neutral-0);
 }
 
 img.card__background {
@@ -78,8 +78,30 @@ img.card__background {
     top: 0;
     left: 0;
 
-    border: 1px solid #DCE0E5;
+    border: 1px solid var(--neutral-200);
     border-radius: 8px;
     object-fit: cover;
     z-index: 0;
+}
+
+@media (hover: none), (pointer: coarse) {
+    div.card,
+    div.cards__fluid:hover > :not(:hover) {
+        transition: none;
+    }
+
+    div.card:hover,
+    div.card:focus {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    div.card:active {
+        opacity: 0.5;
+    }
+
+    div.cards__fluid:hover > :not(:hover),
+    div.cards__fluid:focus > :not(:focus) {
+        opacity: 1;
+    }
 }

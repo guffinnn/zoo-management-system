@@ -11,15 +11,19 @@ div.footer {
     width: 216px;
     height: 48px;
 
-    background: #FFFFFF;
-    border: 1px solid #DCE0E5;
+    background: var(--neutral-0);
+    border: 1px solid var(--neutral-200);
 
-    box-shadow: 0 1px 2px rgba(128, 128, 128, 0.12);
+    box-shadow: 0 1px 2px var(--neutral-400);
     border-radius: 8px;
 
     z-index: 100;
 
     cursor: pointer;
+}
+
+a.footer {
+    width: 100%;
 }
 
 footer.footer {
@@ -49,9 +53,9 @@ div.burger__menu {
     width: 48px;
     height: 48px;
 
-    background: #FFFFFF;
-    border: 1px solid #DCE0E5;
-    box-shadow: inset 0 7px 12px rgba(255, 255, 255, 0.08), inset 0 -2px 2px rgba(48, 48, 48, 0.1);
+    background: var(--neutral-0);
+    border: 1px solid var(--neutral-200);
+    box-shadow: inset 0 7px 12px #FFFFFF14, inset 0 -2px 2px #30303019;
     border-radius: 8px;
 
     cursor: pointer;
@@ -146,7 +150,7 @@ div.content__info {
     display: flex;
     align-items: center;
 
-    color: #14181F;
+    color: var(--neutral-900);
 }
 
 .info__settings {
@@ -157,7 +161,7 @@ div.content__info {
     display: flex;
     align-items: center;
 
-    color: #6F7C8E;
+    color: var(--neutral-600);
 }
 
 @media(max-width: 600px) {
@@ -167,11 +171,10 @@ div.content__info {
         left: 50%;
         transform: translate(-50%, 0%);
 
-        width: calc(100vw - 40px);
+        width: calc(100vw - 54px);
         display: flex;
         justify-content: center;
         align-items: center;
-        /* bottom: 50%; */
     }
 
     div.burger__menu:active nav {
@@ -180,7 +183,7 @@ div.content__info {
 
     div.burger__menu:active aside.aside {
         grid-row: 1 / 3;
-        background: #F6F7F9;
+        background: var(--neutral-50);
 
         position: absolute;
         z-index: 10;
