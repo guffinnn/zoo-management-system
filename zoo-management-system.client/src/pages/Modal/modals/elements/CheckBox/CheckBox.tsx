@@ -1,9 +1,12 @@
+import { FormikFields } from '@constants/tables/global.ts';
 import {
   StyledFormCheck,
   StyledFormCheckInput,
   StyledFormCheckLabel,
 } from '@pages/Modal/modals/elements/CheckBox/styled.ts';
+import { useFormikContext } from 'formik';
 import { JSX } from 'react';
+import { ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface CheckBoxProps {
   id: string;
@@ -11,10 +14,23 @@ interface CheckBoxProps {
 }
 
 export function CheckBox({ id, children }: CheckBoxProps): JSX.Element {
+  const { handleChange, handleBlur, values, touched, errors } =
+    useFormikContext<FormikFields>();
+  const isValidField = `${touched[id] && errors[id] ? 'error' : null}`;
+
   return (
-    <StyledFormCheck>
-      <StyledFormCheckInput value="" id={id} />
-      <StyledFormCheckLabel htmlFor={id}>{children}</StyledFormCheckLabel>
-    </StyledFormCheck>
+    <ErrorWrapper className={isValidField} error={`${errors[id]}`}>
+      <StyledFormCheck>
+        <StyledFormCheckInput
+          id={id}
+          name={id}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={values[id]}
+          className={isValidField}
+        />
+        <StyledFormCheckLabel htmlFor={id}>{children}</StyledFormCheckLabel>
+      </StyledFormCheck>
+    </ErrorWrapper>
   );
 }

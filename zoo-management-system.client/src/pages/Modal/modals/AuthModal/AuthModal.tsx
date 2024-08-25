@@ -1,20 +1,19 @@
 import { PATH } from '@constants/paths.ts';
 import { DEFAULT_MIN_LENGTH, ERROR } from '@constants/values.ts';
 import {
-  Form,
   Input,
   InputWrapper,
   Label,
   ModalContainer,
-  ModalHeading,
   NotifyFrame,
   NotifyText,
-  SubmitButton,
+
 } from '@pages/Modal/modals/AuthModal/styled.ts';
 import { useFormik } from 'formik';
 import { JSX } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+import { Form, ModalHeading, SubmitButton } from '@pages/Modal/styled.ts';
 
 const validationSchema = Yup.object({
   email: Yup.string().email(ERROR.EMAIL_FORMAT).required(ERROR.REQUIRED),

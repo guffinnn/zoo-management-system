@@ -15,5 +15,7 @@ export const ERROR = {
   EMAIL_FORMAT: 'Неверный формат электронной почты',
   PASSWORD_MIN_LENGTH: 'Пароль должен содержать минимум 6 символов',
   DATE_CONFLICT: 'Дата рождения не может быть позже даты зачисления',
+  NOT_A_NUMBER: 'Поле должно содержать число',
+  REQUIRED_TRUE: 'Подтверждение администратора обязательно',
 };
 export const DEFAULT_MIN_LENGTH = 6;

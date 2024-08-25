@@ -1,9 +1,8 @@
-import {
-  StyledGroup,
-  StyledGroupText,
-} from '@pages/Modal/modals/AddDataModal/styled.ts';
+import { FormikFields } from '@constants/tables/global.ts';
 import { StyledSelect } from '@pages/Modal/modals/elements/Select/styled.ts';
+import { useFormikContext } from 'formik';
 import { JSX } from 'react';
+import { StyledGroup, StyledGroupText, ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface SelectProps {
   id: string;
@@ -12,18 +11,28 @@ interface SelectProps {
 }
 
 export function Select({ id, label, options }: SelectProps): JSX.Element {
+  const { handleChange, handleBlur, values, touched, errors } =
+    useFormikContext<FormikFields>();
+  const isValidField = `${touched[id] && errors[id] ? 'error' : null}`;
+
   return (
-    <StyledGroup>
-      <StyledGroupText>{label}</StyledGroupText>
-      <StyledSelect id={id} className="form-control">
-        <option className="option" value="NULL">
+    <ErrorWrapper className={isValidField} error={`${errors[id]}`}>
+      <StyledGroup className={isValidField}>
+        <StyledGroupText>{label}</StyledGroupText>
+        <StyledSelect
+          id={id}
+          name={id}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={values[id]}
+        >
           {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.text}
             </option>
           ))}
-        </option>
-      </StyledSelect>
-    </StyledGroup>
+        </StyledSelect>
+      </StyledGroup>
+    </ErrorWrapper>
   );
 }
