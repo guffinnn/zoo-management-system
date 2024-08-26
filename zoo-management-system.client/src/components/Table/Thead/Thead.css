@@ -19,6 +19,12 @@ p.head__cell__content {
     color: var(--neutral-900);
 }
 
+p.head__cell__content.number,
+p.head__cell__content.eye,
+p.head__cell__content.edit {
+    justify-content: flex-end;
+}
+
 p.head__cell__content.select:after {
     content: url(../../../assets/triangle.svg);
 
