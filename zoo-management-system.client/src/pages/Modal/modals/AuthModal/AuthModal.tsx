@@ -7,13 +7,12 @@ import {
   ModalContainer,
   NotifyFrame,
   NotifyText,
-
 } from '@pages/Modal/modals/AuthModal/styled.ts';
+import { Form, ModalHeading, SubmitButton } from '@pages/Modal/styled.ts';
 import { useFormik } from 'formik';
 import { JSX } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
-import { Form, ModalHeading, SubmitButton } from '@pages/Modal/styled.ts';
 
 const validationSchema = Yup.object({
   email: Yup.string().email(ERROR.EMAIL_FORMAT).required(ERROR.REQUIRED),

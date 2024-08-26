@@ -4,9 +4,9 @@ import {
   StyledFormCheckInput,
   StyledFormCheckLabel,
 } from '@pages/Modal/modals/elements/CheckBox/styled.ts';
+import { ErrorWrapper } from '@pages/Modal/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
-import { ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface CheckBoxProps {
   id: string;
