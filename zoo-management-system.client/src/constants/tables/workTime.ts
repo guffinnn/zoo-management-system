@@ -6,7 +6,7 @@ export const WORKTIME_TABLE_COLUMNS: Column[] = [
   { name: 'Сотрудник', type: 'text' },
   { name: 'Статус', type: 'select' },
   { name: 'Вид работы', type: 'select' },
-  { name: 'Время, ч.', type: 'text' },
+  { name: 'Время, ч.', type: 'number' },
   { name: 'Действия', type: 'edit' },
 ];
 
