@@ -1,5 +1,14 @@
 import { ERROR } from '@constants/values.ts';
+import { Column } from '@custom-types/database/animal.ts';
 import * as Yup from 'yup';
+
+export const WORKTIME_TABLE_COLUMNS: Column[] = [
+  { name: 'Сотрудник', type: 'text' },
+  { name: 'Статус', type: 'select' },
+  { name: 'Вид работы', type: 'select' },
+  { name: 'Время, ч.', type: 'text' },
+  { name: 'Действия', type: 'edit' },
+];
 
 export const validationSchema = Yup.object().shape({
   employee: Yup.string().required(ERROR.REQUIRED),
