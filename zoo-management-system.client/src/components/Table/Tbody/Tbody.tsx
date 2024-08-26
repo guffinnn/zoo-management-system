@@ -6,9 +6,9 @@ import { JSX } from 'react';
 function Tbody({ columns, data }: TableProps): JSX.Element {
   return (
     <>
-      {data.map((animal, index) => (
+      {data.map((entity, index) => (
         <tr key={index}>
-          {Object.entries(animal).map(([field, value], i) => (
+          {Object.entries(entity).map(([field, value], i) => (
             <td key={i} className="cell">
               <p className={`cell__content ${columns[i].type}`}>
                 {field === 'actions' ? <div className="delete"></div> : value}
