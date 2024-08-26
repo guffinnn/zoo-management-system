@@ -45,3 +45,8 @@ build/
 
 # Husky
 .husky/_/
+
+# Firebase
+src/firebase.ts
+.firebase
+firebase-debug.log
