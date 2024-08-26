@@ -3,9 +3,9 @@ import {
   StyledTextArea,
   TextAreaContainer,
 } from '@pages/Modal/modals/elements/TextArea/styled.ts';
+import { ErrorWrapper } from '@pages/Modal/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
-import { ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface TextAreaProps {
   id: string;

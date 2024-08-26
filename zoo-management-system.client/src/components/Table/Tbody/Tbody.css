@@ -4,11 +4,12 @@ td:nth-last-child(-n + 1) {
 }
 
 p.cell__content {
+    position: relative;
     display: flex;
     flex-direction: row;
     gap: 10px;
     font-style: normal;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     font-weight: 400;
@@ -16,7 +17,12 @@ p.cell__content {
     line-height: 140%;
     color: var(--neutral-900);
 
+    width: 100%;
     height: 100%;
+}
+
+p.cell__content.number {
+    justify-content: flex-end;
 }
 
 p.cell__content.eye,
@@ -24,4 +30,71 @@ p.cell__content.delete,
 p.cell__content.edit {
     width: 100%;
     justify-content: end;
+}
+
+p.cell__content.done {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    gap: 4px;
+
+    width: fit-content;
+    height: auto;
+
+    background: #9EFFB3;
+    border-radius: 29px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+
+    color: var(--success-500);
+}
+
+p.cell__content.in_work {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    gap: 4px;
+
+    width: fit-content;
+    height: auto;
+
+    background: #FFED9E;
+    border-radius: 29px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+
+    color: var(--warning-500);
+}
+
+p.cell__content.planned {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 12px;
+    gap: 4px;
+
+    width: fit-content;
+    height: auto;
+
+    background: var(--neutral-200);
+    border-radius: 29px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+
+    color: var(--neutral-500);
 }

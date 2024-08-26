@@ -1,11 +1,8 @@
 import { FormikFields } from '@constants/tables/global.ts';
-import {
-  StyledInput,
-
-} from '@pages/Modal/modals/elements/Input/styled.ts';
+import { StyledInput } from '@pages/Modal/modals/elements/Input/styled.ts';
+import { ErrorWrapper } from '@pages/Modal/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
-import { ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface InputProps {
   type: string;

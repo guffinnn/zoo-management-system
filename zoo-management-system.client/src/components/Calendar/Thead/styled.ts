@@ -17,8 +17,8 @@ export const Theading = styled.th`
     padding: 8px;
     gap: 10px;
 
-    width: 80px;
-    min-width: 0;
+    width: auto;
+    min-width: 80px;
 
     background-color: var(--neutral-50);
     border-bottom: 1px solid var(--neutral-400);

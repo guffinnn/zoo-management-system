@@ -1,13 +1,22 @@
 import { FormikFields } from '@constants/tables/global.ts';
 import { StyledSelect } from '@pages/Modal/modals/elements/Select/styled.ts';
+import {
+  ErrorWrapper,
+  StyledGroup,
+  StyledGroupText,
+} from '@pages/Modal/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
-import { StyledGroup, StyledGroupText, ErrorWrapper } from '@pages/Modal/styled.ts';
 
 interface SelectProps {
   id: string;
   label: string;
-  options: { value: string; text: string }[];
+  options: {
+    value: string;
+    text: string;
+    disabled?: boolean;
+    selected?: boolean;
+  }[];
 }
 
 export function Select({ id, label, options }: SelectProps): JSX.Element {
@@ -27,7 +36,12 @@ export function Select({ id, label, options }: SelectProps): JSX.Element {
           value={values[id]}
         >
           {options.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option
+              key={option.value}
+              value={option.value}
+              disabled={option.disabled}
+              selected={option.selected}
+            >
               {option.text}
             </option>
           ))}
