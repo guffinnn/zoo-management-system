@@ -11,7 +11,12 @@ import { JSX } from 'react';
 interface SelectProps {
   id: string;
   label: string;
-  options: { value: string; text: string }[];
+  options: {
+    value: string;
+    text: string;
+    disabled?: boolean;
+    selected?: boolean;
+  }[];
 }
 
 export function Select({ id, label, options }: SelectProps): JSX.Element {
@@ -31,7 +36,12 @@ export function Select({ id, label, options }: SelectProps): JSX.Element {
           value={values[id]}
         >
           {options.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option
+              key={option.value}
+              value={option.value}
+              disabled={option.disabled}
+              selected={option.selected}
+            >
               {option.text}
             </option>
           ))}
