@@ -11,8 +11,8 @@ export const Tdescription = styled.td`
     padding: 8px;
     gap: 10px;
 
-    width: 80px;
-    min-width: 0;
+    width: auto;
+    min-width: 80px;
     height: auto;
     min-height: 51px;
 

@@ -8,7 +8,7 @@ table.table {
     table-layout: fixed;
     border-collapse: collapse;
 
-    width: 100%;
+    width: fit-content;
     height: 100%;
 
     background: var(--neutral-0);
@@ -40,7 +40,7 @@ tbody td {
 
     height: fit-content;
     min-height: 44px;
-    width: calc(100vw * 1/7);
+    width: 100%;
     min-width: 165px;
 
     transition: all 0.3s ease-in-out;
@@ -60,6 +60,7 @@ tbody.tbody tr {
     align-items: flex-start;
     padding: 0;
 
+    width: 100%;
     height: fit-content;
     min-height: 44px;
 }
