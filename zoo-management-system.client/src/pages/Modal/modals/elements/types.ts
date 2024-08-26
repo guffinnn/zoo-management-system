@@ -47,7 +47,11 @@ export type ElementSelect = ElementBase<
   ElementType.select,
   {
     label: string;
-    options: { value: string; text: string }[];
+    options: {
+      value: string;
+      text: string;
+      disabled?: boolean;
+    }[];
   }
 >;
 

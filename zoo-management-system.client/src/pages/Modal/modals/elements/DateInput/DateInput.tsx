@@ -1,8 +1,12 @@
 import { FormikFields } from '@constants/tables/global.ts';
+import { StyledInputWithLabel } from '@pages/Modal/modals/elements/DateInput/styled.ts';
+import {
+  ErrorWrapper,
+  StyledGroup,
+  StyledGroupText,
+} from '@pages/Modal/styled.ts';
 import { useFormikContext } from 'formik';
 import { JSX } from 'react';
-import { StyledGroup, StyledGroupText, ErrorWrapper } from '@pages/Modal/styled.ts';
-import { StyledInputWithLabel } from '@pages/Modal/modals/elements/DateInput/styled.ts';
 
 interface DateInputProps {
   id: string;

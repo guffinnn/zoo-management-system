@@ -17,7 +17,7 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       id: 'aviary',
       label: 'Вид:',
       options: [
-        { value: 'null', text: 'Выберите вид' },
+        { value: 'null', text: 'Выберите вид', disabled: true },
         { value: 'dog', text: 'Собака' },
       ],
     },
@@ -57,13 +57,29 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       type: ElementType.select,
       id: 'type_of_work',
       label: 'Вид работы:',
-      options: [{ value: 'null', text: 'Выберите работу' }],
+      options: [
+        {
+          value: 'null',
+          text: 'Выберите работу',
+          disabled: true,
+        },
+        { value: 'feeding', text: 'Кормление' },
+        { value: 'cleaning', text: 'Уборка' },
+        { value: 'medical', text: 'Мед. осмотр' },
+      ],
     },
     {
       type: ElementType.select,
       id: 'status',
       label: 'Статус:',
-      options: [{ value: 'null', text: 'Выполнено' }],
+      options: [
+        {
+          value: 'done',
+          text: 'Выполнено',
+        },
+        { value: 'in_work', text: 'В процессе' },
+        { value: 'planned', text: 'Назначено' },
+      ],
     },
     {
       type: ElementType.label,
