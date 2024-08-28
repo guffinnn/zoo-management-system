@@ -20,3 +20,9 @@ export const ERROR = {
   REQUIRED_TRUE: 'Подтверждение администратора обязательно',
 };
 export const DEFAULT_MIN_LENGTH = 6;
+export const LOGIN_SUCCEEDED = 'Вход выполнен';
+export const LOGIN_FAILED = 'Вход не выполнен';
+export const LOGIN_SUCCEEDED_INFO = 'Доступ к приложению открыт';
+export const LOGIN_FAILED_INFO = 'Пользователя с такими данными не существует';
+export const CLOSE_WINDOW = 'Закрыть';
+export const EXIT_ACCOUNT = 'Выйти из аккаунта';

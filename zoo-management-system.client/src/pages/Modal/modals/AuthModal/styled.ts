@@ -137,5 +137,9 @@ export const NotifyText = styled.p`
     color: var(--primary-500);
   }
 
+  &.exit {
+    cursor: pointer;
+  }
+
   cursor: default;
 `;
