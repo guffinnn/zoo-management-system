@@ -1,7 +1,14 @@
 import error from '@assets/error.svg';
 import success from '@assets/success.svg';
 import { PATH } from '@constants/paths.ts';
-import { logOut } from '@pages/Modal/modals/AuthModal/AuthModal.tsx';
+import {
+  CLOSE_WINDOW,
+  EXIT_ACCOUNT,
+  LOGIN_FAILED,
+  LOGIN_FAILED_INFO,
+  LOGIN_SUCCEEDED,
+  LOGIN_SUCCEEDED_INFO,
+} from '@constants/values.ts';
 import {
   NotifyFrame,
   NotifyText,
@@ -19,6 +26,7 @@ import {
 } from '@pages/Modal/modals/StatusModal/styled.ts';
 import { RootState } from '@store/store.ts';
 import { logOut as logOutFromRedux } from '@store/userSlice.ts';
+import { logOut } from '@utils/authService.ts';
 import { JSX } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -46,22 +54,20 @@ function StatusModal(): JSX.Element {
         </StatusImageContainer>
         <ModalContent>
           <StatusHeading>
-            {!isAuthenticated ? 'Вход не выполнен' : 'Вход выполнен'}
+            {!isAuthenticated ? LOGIN_FAILED : LOGIN_SUCCEEDED}
           </StatusHeading>
           <StatusInfo>
-            {!isAuthenticated
-              ? 'Пользователя с такими данными не существует'
-              : 'Доступ к приложению открыт'}
+            {!isAuthenticated ? LOGIN_FAILED_INFO : LOGIN_SUCCEEDED_INFO}
           </StatusInfo>
         </ModalContent>
         <ButtonContainer>
-          <Button onClick={handleClick}>Закрыть</Button>
+          <Button onClick={handleClick}>{CLOSE_WINDOW}</Button>
         </ButtonContainer>
       </InfoContent>
       {isAuthenticated && (
         <NotifyFrame>
           <NotifyText className="exit" onClick={handleExitClick}>
-            <span>Выйти из аккаунта</span>
+            <span>{EXIT_ACCOUNT}</span>
           </NotifyText>
         </NotifyFrame>
       )}
