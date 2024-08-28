@@ -1,5 +1,7 @@
 import { PATH } from '@constants/paths.ts';
-import { DEFAULT_MIN_LENGTH, ERROR } from '@constants/values.ts';
+import { validationSchema } from '@constants/tables/user.ts';
+import { UserState } from '@custom-types/database/user.ts';
+import { useAuth } from '@hooks/useAuth.ts';
 import {
   Input,
   InputWrapper,
@@ -9,31 +11,61 @@ import {
   NotifyText,
 } from '@pages/Modal/modals/AuthModal/styled.ts';
 import { Form, ModalHeading, SubmitButton } from '@pages/Modal/styled.ts';
-import { useFormik } from 'formik';
-import { JSX } from 'react';
+import { RootState } from '@store/store.ts';
+import { signIn } from '@utils/authService.ts';
+import { FormikHelpers, useFormik } from 'formik';
+import React, { JSX, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import * as Yup from 'yup';
-
-const validationSchema = Yup.object({
-  email: Yup.string().email(ERROR.EMAIL_FORMAT).required(ERROR.REQUIRED),
-  password: Yup.string()
-    .min(DEFAULT_MIN_LENGTH, ERROR.PASSWORD_MIN_LENGTH)
-    .required(ERROR.REQUIRED),
-});
 
 function AuthModal(): JSX.Element {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const user = useSelector((state: RootState) => state.user.user);
 
-  const formik = useFormik({
+  const [userData, setUserData] = useState<UserState>({
+    email: user?.email,
+    password: '',
+  });
+
+  useAuth(userData);
+
+  const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setUserData({
+      ...user,
+      email: e.target.value,
+    });
+
+    formik.handleChange(e);
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setUserData({
+      ...user,
+      password: e.target.value,
+    });
+
+    formik.handleChange(e);
+  };
+
+  const navigate = useNavigate();
+  const handleSubmit = async (
+    values: UserState,
+    { setSubmitting }: FormikHelpers<UserState>,
+  ) => {
+    await signIn(values, dispatch);
+    setSubmitting(false);
+    navigate(PATH.TO_STATUS_MODAL);
+  };
+
+  const formik = useFormik<UserState>({
     initialValues: {
       email: '',
       password: '',
     },
     validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
-      navigate(PATH.TO_STATUS_MODAL);
-    },
+    onSubmit: handleSubmit,
   });
   const isValidEmail = `${formik.touched.email && formik.errors.email ? 'error' : null}`;
   const isValidPassword = `${formik.touched.password && formik.errors.password ? 'error' : null}`;
@@ -49,7 +81,7 @@ function AuthModal(): JSX.Element {
             id="email"
             name="email"
             placeholder="example@mail.com"
-            onChange={formik.handleChange}
+            onChange={handleLoginChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
             className={isValidEmail}
@@ -65,7 +97,7 @@ function AuthModal(): JSX.Element {
             id="password"
             name="password"
             placeholder="Введите пароль"
-            onChange={formik.handleChange}
+            onChange={handlePasswordChange}
             onBlur={formik.handleBlur}
             value={formik.values.password}
             className={isValidPassword}

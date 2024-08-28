@@ -7,9 +7,8 @@ export const ModalContainer = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  gap: 16px;
+  justify-content: space-between;
+  padding: 0;
 
   width: 300px;
   height: fit-content;
@@ -18,6 +17,15 @@ export const ModalContainer = styled.div`
   border: 1px solid var(--neutral-400);
   box-shadow: 0 6px 12px #33333314;
   border-radius: 12px;
+`;
+
+export const InfoContent = styled.div`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: 16px;
 `;
 
 export const StatusImageContainer = styled.div`
