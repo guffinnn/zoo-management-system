@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("5bfdb2e7-1566-4222-b900-767722975f4c")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("zoo-management-system.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98f7f91359816117cd2203aa03c68fc4e7fbaf5e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1326ca75c1e1aaa1ec77e5c23617cebeda462b20")]
 [assembly: System.Reflection.AssemblyProductAttribute("zoo-management-system.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("zoo-management-system.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
