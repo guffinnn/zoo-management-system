@@ -1,7 +1,7 @@
 import error from '@assets/error.svg';
 import success from '@assets/success.svg';
 import {
-  ButtonContainer,
+  ButtonContainer, InfoContent,
   ModalContainer,
   ModalContent,
   StatusHeading,
@@ -17,25 +17,29 @@ function ValidationModal(): JSX.Element {
 
   return (
     <ModalContainer>
-      <StatusImageContainer className={status ? 'error' : 'success'}>
-        <StatusImage src={status ? error : success} />
-      </StatusImageContainer>
-      <ModalContent>
-        <StatusHeading>{status ? 'Отклонено' : 'Подтверждение'}</StatusHeading>
-        <StatusInfo>
-          {status
-            ? 'Убедитесь в правильности введенных данных и попробуйте еще раз'
-            : 'Вы действительно хотите добавить новое животное?'}
-        </StatusInfo>
-      </ModalContent>
-      <ButtonContainer>
-        <Button className={status ? 'error' : 'success'}>
-          {status ? 'Заново' : 'Добавить'}
-        </Button>
-      </ButtonContainer>
-      <ButtonContainer>
-        <Button>{status ? 'Выйти' : 'Не добавлять'}</Button>
-      </ButtonContainer>
+      <InfoContent>
+        <StatusImageContainer className={status ? 'error' : 'success'}>
+          <StatusImage src={status ? error : success} />
+        </StatusImageContainer>
+        <ModalContent>
+          <StatusHeading>
+            {status ? 'Отклонено' : 'Подтверждение'}
+          </StatusHeading>
+          <StatusInfo>
+            {status
+              ? 'Убедитесь в правильности введенных данных и попробуйте еще раз'
+              : 'Вы действительно хотите добавить новое животное?'}
+          </StatusInfo>
+        </ModalContent>
+        <ButtonContainer>
+          <Button className={status ? 'error' : 'success'}>
+            {status ? 'Заново' : 'Добавить'}
+          </Button>
+        </ButtonContainer>
+        <ButtonContainer>
+          <Button>{status ? 'Выйти' : 'Не добавлять'}</Button>
+        </ButtonContainer>
+      </InfoContent>
     </ModalContainer>
   );
 }

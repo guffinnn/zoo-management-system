@@ -33,6 +33,7 @@ export const Button = styled.button`
     color: var(--neutral-0);
     margin-bottom: -6px;
 
+    border: none;
     background: var(--success-500);
     box-shadow:
       inset 0 7px 12px #ffffff14,
@@ -52,6 +53,7 @@ export const Button = styled.button`
     color: var(--neutral-0);
     margin-bottom: -6px;
 
+    border: none;
     background: var(--danger-500);
     box-shadow:
       inset 0 7px 12px #ffffff14,
