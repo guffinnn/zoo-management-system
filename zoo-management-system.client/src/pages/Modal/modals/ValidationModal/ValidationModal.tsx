@@ -1,7 +1,8 @@
 import error from '@assets/error.svg';
 import success from '@assets/success.svg';
 import {
-  ButtonContainer, InfoContent,
+  ButtonContainer,
+  InfoContent,
   ModalContainer,
   ModalContent,
   StatusHeading,
