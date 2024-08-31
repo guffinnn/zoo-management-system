@@ -8,7 +8,7 @@ table.table {
     table-layout: fixed;
     border-collapse: collapse;
 
-    width: fit-content;
+    width: 100%;
     height: 100%;
 
     background: var(--neutral-0);
