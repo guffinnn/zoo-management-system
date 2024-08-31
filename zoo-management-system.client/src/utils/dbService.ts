@@ -43,11 +43,11 @@ export async function getWorkTime(): Promise<WorkTime[]> {
       const data = doc.data();
       const employeeRef = data.employee_id;
       const employeeDoc = await getDoc(employeeRef);
-      const employeeData: {
+      const employeeData = employeeDoc.data() as {
         surname: string;
         name: string;
         middle_name: string;
-      } = employeeDoc.data();
+      };
 
       return {
         id: doc.id,
