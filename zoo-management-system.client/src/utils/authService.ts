@@ -1,4 +1,4 @@
-import { UserState } from '@custom-types/database/user.ts';
+import { UserState } from '@custom-types/user.ts';
 import { Dispatch } from '@reduxjs/toolkit';
 import { setUser } from '@store/userSlice.ts';
 import { User } from 'firebase/auth';

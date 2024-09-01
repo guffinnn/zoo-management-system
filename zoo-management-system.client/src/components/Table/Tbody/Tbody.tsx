@@ -17,8 +17,8 @@ function Tbody({ columns, data }: TableProps): JSX.Element {
 
   return (
     <>
-      {data.map((entity, index) => (
-        <tr key={index}>
+      {data.map((entity, id) => (
+        <tr key={id}>
           {Object.entries(entity).map(([field, value], i) => (
             <td key={i} className="cell">
               {columns[i].name !== 'Статус' ? (

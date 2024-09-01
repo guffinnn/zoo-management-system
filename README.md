@@ -39,10 +39,14 @@ _Web-application for accounting and monitoring work of zoo staff_
 
 > Tech stack
 
-| Back-end          | Front-end          | Clean code | Database       | VCS  | 
-|:------------------|:-------------------|:-----------|:---------------|:-----|
-| C#                | React              | ESLint     | MS SQL Server  | Git  |
-| ASP.NET           | Vite               | Prettier   |                |      |
-| Node.js           | React Router DOM   |            |                |      |
-|                   | CSS                |            |                |      |
-|                   | Styled components  |            |                |      |
+| Back-end      | Front-end         | Other    | 
+|:--------------|:------------------|:---------|
+| C#            | React             | Git      |
+| ASP.NET       | Redux             | Notion   |
+| Node.js       | React Router DOM  | Draw.io  |
+| Firebase      | CSS               | Figma    |
+| MS SQL Server | Styled components | Postman  |
+|               | Bootstrap         | DBeaver  |
+|               | Formik            | WebStorm |
+|               | Yup               | ESLint   |
+|               | Vite              | Prettier |

@@ -1,5 +1,5 @@
 import { PATH } from '@constants/paths.ts';
-import { UserState } from '@custom-types/database/user.ts';
+import { UserState } from '@custom-types/user.ts';
 import { logOut as logOutFromRedux, setUser } from '@store/userSlice';
 import { logOut, observeAuthState } from '@utils/authService';
 import { useEffect } from 'react';

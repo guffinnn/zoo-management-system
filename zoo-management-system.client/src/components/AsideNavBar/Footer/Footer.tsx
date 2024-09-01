@@ -1,8 +1,8 @@
 import './Footer.css';
 
+import user from '@assets/avatar.svg';
 import burger from '@assets/burger.svg';
 import select from '@assets/select-arrow.svg';
-import user from '@assets/user-icon.png';
 import { PATH } from '@constants/paths.ts';
 import { closeMenu, openMenu } from '@store/menuSlice.ts';
 import { RootState } from '@store/store.ts';

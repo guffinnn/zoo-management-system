@@ -13,12 +13,20 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
     },
     { type: ElementType.input, id: 'nickname', placeholder: 'Введите кличку' },
     {
+      type: ElementType.label,
+      id: '_species',
+      htmlFor: 'species',
+      children: 'Вид',
+    },
+    { type: ElementType.input, id: 'species', placeholder: 'Укажите вид' },
+    {
       type: ElementType.select,
-      id: 'aviary',
-      label: 'Вид:',
+      id: 'gender',
+      label: 'Пол:',
       options: [
-        { value: 'null', text: 'Выберите вид', disabled: true },
-        { value: 'dog', text: 'Собака' },
+        { value: 'null', text: 'Выберите пол', disabled: true },
+        { value: 'male', text: 'Мужской' },
+        { value: 'female', text: 'Женский' },
       ],
     },
     {
@@ -33,17 +41,7 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       label: 'Дата зачисления:',
       placeholder: 'Выберите дату',
     },
-    {
-      type: ElementType.label,
-      id: '_medical_indicators',
-      htmlFor: 'medical_indicators',
-      children: 'Мед. показания',
-    },
-    {
-      type: ElementType.textArea,
-      id: 'medical_indicators',
-      placeholder: 'Опишите мед. обследования',
-    },
+    // TODO: Add photo field
   ],
   workTime: [
     {
@@ -52,7 +50,17 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       htmlFor: 'employee',
       children: 'Сотрудник',
     },
-    { type: ElementType.input, id: 'employee', placeholder: 'Выберите себя' },
+    {
+      type: ElementType.input,
+      id: 'employee',
+      placeholder: 'Выберите себя',
+    },
+    {
+      type: ElementType.dateInput,
+      id: 'date_of_work',
+      label: 'Дата выполнения:',
+      placeholder: 'Выберите дату',
+    },
     {
       type: ElementType.select,
       id: 'type_of_work',
@@ -105,7 +113,7 @@ export const initialValues = {
     medical_indicators: '',
   },
   workTime: {
-    employee: '',
+    employee_id: '',
     type_of_work: '',
     status: '',
     time: '',
