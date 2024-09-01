@@ -5,5 +5,6 @@ export interface WorkTime {
   type_of_work: string; // TODO: Delete
   status: string;
   time: number;
+  request?: boolean;
   actions?: string;
 }

@@ -1,8 +1,9 @@
 import './AddDataModal.css';
 
 import { PATH } from '@constants/paths.ts';
-import { validationSchema } from '@constants/tables/animal.ts';
 import { fieldConfig, initialValues } from '@constants/tables/global.ts';
+import { validationSchemas } from '@constants/validationSchemas.ts';
+import { DataType } from '@custom-types/dataType.ts';
 import {
   FormFrame,
   ModalContainer,
@@ -11,11 +12,13 @@ import { Element } from '@pages/Modal/modals/elements/Element.tsx';
 import { Form, ModalHeading, SubmitButton } from '@pages/Modal/styled.ts';
 import { Formik } from 'formik';
 import { JSX } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function AddDataModal(): JSX.Element {
-  const fields = fieldConfig['animal'];
-  const initial = initialValues['animal'];
+  const { dataType } = useParams<{ dataType: DataType }>();
+  const fields = fieldConfig[dataType!];
+  const initial = initialValues[dataType!];
+  const validationSchema = validationSchemas[dataType!];
 
   const navigate = useNavigate();
 
@@ -28,7 +31,9 @@ function AddDataModal(): JSX.Element {
           validationSchema={validationSchema}
           onSubmit={(values) => {
             console.log(values);
-            navigate(PATH.TO_VALIDATION_MODAL);
+
+            const TO_MODAL = PATH.TO_VALIDATION_MODAL;
+            navigate(TO_MODAL[dataType!]);
           }}
         >
           {({ handleSubmit }) => (

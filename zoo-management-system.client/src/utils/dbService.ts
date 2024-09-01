@@ -1,6 +1,11 @@
 import { Animal } from '@custom-types/database/animal.ts';
 import { WorkTime } from '@custom-types/database/workTime.ts';
-import { collection, getDoc, getDocs, doc as document } from 'firebase/firestore';
+import {
+  collection,
+  doc as document,
+  getDoc,
+  getDocs,
+} from 'firebase/firestore';
 
 import { db } from '../firebase';
 
