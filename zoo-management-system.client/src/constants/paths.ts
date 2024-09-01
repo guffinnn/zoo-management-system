@@ -7,8 +7,11 @@ export const PATH = {
   TO_AUTH_MODAL: '/modal/auth/1',
   TO_STATUS_MODAL: '/modal/status/1',
   TO_ADD_MODAL: {
-    ANIMAL: '/modal/add/animal',
-    WORKTIME: '/modal/add/workTime',
+    animal: '/modal/add/animal',
+    workTime: '/modal/add/workTime',
   },
-  TO_VALIDATION_MODAL: '/modal/validation/1',
+  TO_VALIDATION_MODAL: {
+    animal: '/modal/validation/animal',
+    workTime: '/modal/validation/workTime',
+  },
 };

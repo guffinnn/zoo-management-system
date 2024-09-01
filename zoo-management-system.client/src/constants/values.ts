@@ -23,9 +23,23 @@ export const ERROR = {
   TIME_MIN_VALUE: 'Время не может быть меньше полчаса',
 };
 export const DEFAULT_MIN_LENGTH = 6;
+// For auth
 export const LOGIN_SUCCEEDED = 'Вход выполнен';
 export const LOGIN_FAILED = 'Вход не выполнен';
 export const LOGIN_SUCCEEDED_INFO = 'Доступ к приложению открыт';
 export const LOGIN_FAILED_INFO = 'Пользователя с такими данными не существует';
 export const CLOSE_WINDOW = 'Закрыть';
 export const EXIT_ACCOUNT = 'Выйти из аккаунта';
+// For status
+export const STATUS_REJECTED = 'Отклонено';
+export const STATUS_CONFIRMED = 'Подтверждение';
+export const STATUS_REJECTED_INFO =
+  'Проверьте подключение к сети Интернет и попробуйте еще раз';
+export const STATUS_CONFIRMED_INFO = {
+  animal: 'Вы действительно хотите добавить новое животное?',
+  workTime: 'Вы действительно хотите добавить выполненную работу?',
+};
+export const BUTTON_RETRY = 'Заново';
+export const BUTTON_ADD = 'Добавить';
+export const BUTTON_EXIT = 'Выйти';
+export const BUTTON_DONT_ADD = 'Не добавлять';
