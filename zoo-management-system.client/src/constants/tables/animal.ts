@@ -3,7 +3,6 @@ import { Column } from '@custom-types/database/animal.ts';
 import * as Yup from 'yup';
 
 export const ANIMAL_TABLE_COLUMNS: Column[] = [
-  { name: 'ID', type: 'string' },
   { name: 'Кличка', type: 'text' },
   { name: 'Вид', type: 'text' },
   { name: 'Пол', type: 'select' },
