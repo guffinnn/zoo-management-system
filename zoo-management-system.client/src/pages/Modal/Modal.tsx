@@ -7,7 +7,10 @@ import { useLocation, useParams } from 'react-router-dom';
 
 function Modal(): JSX.Element {
   const location = useLocation();
-  const { id } = useParams();
+  const { modalType } = useParams<{
+    modalType: string;
+    dataType: string;
+  }>();
 
   useEffect(() => {
     if (location.pathname.includes('modal')) {
@@ -20,10 +23,10 @@ function Modal(): JSX.Element {
 
   return (
     <>
-      {id === 'auth' && <AuthModal />}
-      {id === 'status' && <StatusModal />}
-      {id === 'add' && <AddDataModal />}
-      {id === 'validation' && <ValidationModal />}
+      {modalType === 'auth' && <AuthModal />}
+      {modalType === 'status' && <StatusModal />}
+      {modalType === 'add' && <AddDataModal />}
+      {modalType === 'validation' && <ValidationModal />}
     </>
   );
 }
