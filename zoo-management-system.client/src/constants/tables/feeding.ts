@@ -1,4 +1,4 @@
-import { TableColumn } from '@custom-types/database/feeding.ts';
+import { TableColumn } from '@custom-types/feeding.ts';
 
 export const FEEDING_TABLE_COLUMNS: TableColumn[] = [
   'GMT+02',
