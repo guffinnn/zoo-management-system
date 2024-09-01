@@ -1,6 +1,6 @@
 import { Animal } from '@custom-types/database/animal.ts';
 import { WorkTime } from '@custom-types/database/workTime.ts';
-import { collection, getDoc, getDocs } from 'firebase/firestore';
+import { collection, getDoc, getDocs, doc as document } from 'firebase/firestore';
 
 import { db } from '../firebase';
 
@@ -15,7 +15,6 @@ export async function getAnimals(): Promise<Animal[]> {
   const animals = querySnapshot.docs.map((doc) => {
     const data = doc.data();
     return {
-      id: doc.id,
       nickname: data.nickname,
       species: data.species,
       gender: data.gender,
@@ -41,6 +40,7 @@ export async function getWorkTime(): Promise<WorkTime[]> {
   const workTime = await Promise.all(
     querySnapshot.docs.map(async (doc) => {
       const data = doc.data();
+
       const employeeRef = data.employee_id;
       const employeeDoc = await getDoc(employeeRef);
       const employeeData = employeeDoc.data() as {
@@ -49,11 +49,25 @@ export async function getWorkTime(): Promise<WorkTime[]> {
         middle_name: string;
       };
 
+      const detailsQuerySnapshot = await getDocs(
+        collection(db, 'workTimeDetails'),
+      );
+      const detailsData = detailsQuerySnapshot.docs
+        .find((detailDoc) => detailDoc.data().worktime_id.id === doc.id)
+        ?.data();
+
+      let workTypeName = 'Неизвестно';
+      if (detailsData && detailsData.worktype_id) {
+        const workTypeRef = document(db, `workType/${detailsData.worktype_id}`);
+        const workTypeDoc = await getDoc(workTypeRef);
+        const workTypeData = workTypeDoc.data() as { name: string };
+        workTypeName = workTypeData.name;
+      }
+
       return {
-        id: doc.id,
         employee: `${employeeData.surname} ${employeeData.name} ${employeeData.middle_name}`,
         date_of_work: data.date_of_work,
-        type_of_work: data.type_of_work || 'Неизвестно',
+        type_of_work: workTypeName,
         status: data.status,
         time: data.time,
         actions: '',
