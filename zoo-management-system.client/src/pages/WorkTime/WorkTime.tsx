@@ -41,7 +41,10 @@ function WorkTime(): JSX.Element {
       <AsideNavBar />
       <main className={`main ${isOpen && 'open'} ${isClosing && 'close'}`}>
         <Header pageTitle={PAGE_TITLE.WORKTIME}>
-          <PrimaryButton name={ADD.WORKTIME} linkTo={PATH.TO_ADD_MODAL.WORKTIME} />
+          <PrimaryButton
+            name={ADD.WORKTIME}
+            linkTo={PATH.TO_ADD_MODAL.workTime}
+          />
         </Header>
         <section className="section">
           <SearchBox />
