@@ -1,6 +1,6 @@
 import { Animal } from '@custom-types/database/animal.ts';
-import { Feeding } from '@custom-types/database/feeding.ts';
 import { WorkTime } from '@custom-types/database/workTime.ts';
+import { Feeding } from '@custom-types/feeding.ts';
 
 export const ANIMALS: Animal[] = [
   {
