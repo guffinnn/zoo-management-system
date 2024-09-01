@@ -3,6 +3,7 @@ import './AddDataModal.css';
 import { PATH } from '@constants/paths.ts';
 import { fieldConfig, initialValues } from '@constants/tables/global.ts';
 import { validationSchemas } from '@constants/validationSchemas.ts';
+import { DataType } from '@custom-types/dataType.ts';
 import {
   FormFrame,
   ModalContainer,
@@ -12,8 +13,6 @@ import { Form, ModalHeading, SubmitButton } from '@pages/Modal/styled.ts';
 import { Formik } from 'formik';
 import { JSX } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-
-type DataType = 'animal' | 'workTime';
 
 function AddDataModal(): JSX.Element {
   const { dataType } = useParams<{ dataType: DataType }>();
@@ -32,7 +31,9 @@ function AddDataModal(): JSX.Element {
           validationSchema={validationSchema}
           onSubmit={(values) => {
             console.log(values);
-            navigate(PATH.TO_VALIDATION_MODAL);
+
+            const TO_MODAL = PATH.TO_VALIDATION_MODAL;
+            navigate(TO_MODAL[dataType!]);
           }}
         >
           {({ handleSubmit }) => (
