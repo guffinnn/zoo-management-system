@@ -20,6 +20,7 @@ export const ERROR = {
   REQUIRED_TRUE: 'Подтверждение администратора обязательно',
   DATE_TOO_LATE: 'Дата не может быть позже текущей',
   DATE_TOO_EARLY: 'Дата не может быть раньше текущей',
+  TIME_MIN_VALUE: 'Время не может быть меньше полчаса',
 };
 export const DEFAULT_MIN_LENGTH = 6;
 export const LOGIN_SUCCEEDED = 'Вход выполнен';
