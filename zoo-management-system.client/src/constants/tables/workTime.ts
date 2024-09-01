@@ -3,7 +3,6 @@ import { Column } from '@custom-types/database/animal.ts';
 import * as Yup from 'yup';
 
 export const WORKTIME_TABLE_COLUMNS: Column[] = [
-  { name: 'ID', type: 'string' },
   { name: 'Сотрудник', type: 'text' },
   { name: 'Дата выполнения', type: 'date' },
   { name: 'Вид работы', type: 'select' },
