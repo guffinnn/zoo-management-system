@@ -1,23 +1,25 @@
 import { Animal } from '@custom-types/database/animal.ts';
-import { Feeding } from '@custom-types/database/feeding.ts';
 import { WorkTime } from '@custom-types/database/workTime.ts';
+import { Feeding } from '@custom-types/feeding.ts';
 
 export const ANIMALS: Animal[] = [
   {
+    id: '1',
     nickname: 'Лиля',
     species: 'Собака',
+    gender: 'Женский',
     date_of_birth: '01.02.1945',
     date_of_registration: '01.09.1980',
-    medical_indicators: 'Не привит',
     photo: 'img.png',
     actions: '',
   },
   {
+    id: '2',
     nickname: 'Манки',
     species: 'Обезьяна',
+    gender: 'Мужской',
     date_of_birth: '10.01.2020',
     date_of_registration: '29.05.2024',
-    medical_indicators: 'Привит',
     photo: 'img.png',
     actions: '',
   },
@@ -43,30 +45,38 @@ export const FEEDING: Feeding[] = [
 
 export const WORKTIME: WorkTime[] = [
   {
+    id: '1',
     employee: 'Иван Иванов',
-    status: 'Выполнено',
+    date_of_work: '2024-02-02',
     type_of_work: 'Кормление',
+    status: 'Выполнено',
     time: 8,
     actions: '',
   },
   {
+    id: '2',
     employee: 'Иван Иванов',
-    status: 'В процессе',
+    date_of_work: '2024-02-02',
     type_of_work: 'Уборка',
+    status: 'В процессе',
     time: 1,
     actions: '',
   },
   {
+    id: '3',
     employee: 'Иван Иванов',
-    status: 'Выполнено',
+    date_of_work: '2024-02-02',
     type_of_work: 'Мед. осмотр',
+    status: 'Выполнено',
     time: 6,
     actions: '',
   },
   {
+    id: '4',
     employee: 'Иван Иванов',
-    status: 'Назначено',
+    date_of_work: '2024-02-02',
     type_of_work: 'Уборка',
+    status: 'Назначено',
     time: 0,
     actions: '',
   },

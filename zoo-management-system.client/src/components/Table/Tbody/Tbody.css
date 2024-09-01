@@ -17,6 +17,10 @@ p.cell__content {
     line-height: 140%;
     color: var(--neutral-900);
 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     width: 100%;
     height: 100%;
 }

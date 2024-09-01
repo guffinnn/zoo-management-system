@@ -1,6 +1,6 @@
 import Tbody from '@components/Calendar/Tbody/Tbody.tsx';
 import Thead from '@components/Calendar/Thead/Thead.tsx';
-import { Feeding, TableColumn } from '@custom-types/database/feeding.ts';
+import { Feeding, TableColumn } from '@custom-types/feeding.ts';
 import { JSX } from 'react';
 
 export interface CalendarProps {
