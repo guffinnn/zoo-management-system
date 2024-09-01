@@ -1,6 +1,6 @@
 import { PATH } from '@constants/paths.ts';
 import { validationSchema } from '@constants/tables/user.ts';
-import { UserState } from '@custom-types/database/user.ts';
+import { UserState } from '@custom-types/user.ts';
 import { useAuth } from '@hooks/useAuth.ts';
 import {
   Input,
