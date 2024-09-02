@@ -1,3 +1,5 @@
+import { Animal } from '@custom-types/database/animal.ts';
+import { WorkTime } from '@custom-types/database/workTime.ts';
 import {
   ElementType,
   ElementVariant,
@@ -104,19 +106,20 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
   ],
 };
 
-export const initialValues = {
+export const initialValues: Record<string, Animal | WorkTime> = {
   animal: {
     nickname: '',
-    aviary: '',
+    species: '',
+    gender: '',
     date_of_birth: '',
     date_of_registration: '',
-    medical_indicators: '',
   },
   workTime: {
-    employee_id: '',
+    employee: '',
+    date_of_work: '',
     type_of_work: '',
     status: '',
-    time: '',
+    time: 0,
     request: false,
   },
 };

@@ -43,7 +43,7 @@ function Animals(): JSX.Element {
       <AsideNavBar />
       <main className={`main ${isOpen && 'open'} ${isClosing && 'close'}`}>
         <Header pageTitle={PAGE_TITLE.ANIMALS}>
-          <PrimaryButton name={ADD.ANIMAL} linkTo={PATH.TO_ADD_MODAL} />
+          <PrimaryButton name={ADD.ANIMAL} linkTo={PATH.TO_ADD_MODAL.animal} />
         </Header>
         <section className="section">
           <SearchBox />
