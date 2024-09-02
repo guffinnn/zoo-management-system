@@ -1,6 +1,6 @@
 import { PATH } from '@constants/paths.ts';
 import {
-  ANIMAL_ACTIVE_KEY,
+  ANIMAL_ACTIVE_KEY, CLEANING_ACTIVE_KEY,
   DEFAULT_ACTIVE_KEY,
   FEEDING_ACTIVE_KEY,
   MEDICAL_ACTIVE_KEY,
@@ -16,7 +16,14 @@ export function setActiveKeyByLocation({
   location,
   setActiveKey,
 }: SetActiveKeyByLocationProps) {
-  const { TO_HOME, TO_ANIMALS, TO_FEEDING, TO_WORKTIME, TO_EXAMINATION } = PATH;
+  const {
+    TO_HOME,
+    TO_ANIMALS,
+    TO_FEEDING,
+    TO_WORKTIME,
+    TO_EXAMINATION,
+    TO_CLEANING,
+  } = PATH;
 
   switch (location) {
     case TO_HOME:
@@ -33,6 +40,9 @@ export function setActiveKeyByLocation({
       break;
     case TO_EXAMINATION:
       setActiveKey(MEDICAL_ACTIVE_KEY);
+      break;
+    case TO_CLEANING:
+      setActiveKey(CLEANING_ACTIVE_KEY);
       break;
     default:
       setActiveKey(null);
