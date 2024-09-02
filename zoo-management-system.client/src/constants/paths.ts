@@ -4,6 +4,7 @@ export const PATH = {
   TO_FEEDING: '/feeding',
   TO_WORKTIME: '/worktime',
   TO_EXAMINATION: '/medicalExamination',
+  TO_CLEANING: '/cleaning',
   TO_MODAL: '/modal/:modalType/:dataType',
   TO_AUTH_MODAL: '/modal/auth/1',
   TO_STATUS_MODAL: '/modal/status/1',
