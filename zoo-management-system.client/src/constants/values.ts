@@ -2,6 +2,7 @@
 export const ADD = {
   ANIMAL: 'Добавить животное',
   WORKTIME: 'Добавить работу',
+  EMPLOYEE: 'Добавить сотрудника',
 };
 export const DEFAULT_ACTIVE_KEY = 0;
 export const ANIMAL_ACTIVE_KEY = 1;
