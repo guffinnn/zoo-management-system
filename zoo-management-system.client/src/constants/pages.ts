@@ -8,6 +8,7 @@ export const PAGE_TITLE = {
   WORKTIME: 'Журнал учета рабочего времени',
   MEDICAL_EXAMINATION: 'Журнал медицинских обследований',
   CLEANING: 'График уборки вольеров',
+  EMPLOYEES: 'Список сотрудников',
 };
 
 export const LIST_ROWS: ListRow[] = [
@@ -17,5 +18,5 @@ export const LIST_ROWS: ListRow[] = [
   { name: 'Мед. обследования', link: PATH.TO_EXAMINATION },
   { name: 'Кормление', link: PATH.TO_FEEDING },
   { name: 'Уборка', link: PATH.TO_CLEANING },
-  { name: 'Сотрудники', link: '#' },
+  { name: 'Сотрудники', link: PATH.TO_EMPLOYEES },
 ];

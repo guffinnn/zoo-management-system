@@ -1,4 +1,5 @@
 import { Animal } from '@custom-types/database/animal.ts';
+import { Employee } from '@custom-types/database/employee.ts';
 import { WorkTime } from '@custom-types/database/workTime.ts';
 import {
   ElementType,
@@ -104,9 +105,72 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       children: 'Запросить подтверждение работы',
     },
   ],
+  employees: [
+    {
+      type: ElementType.label,
+      id: '_surname',
+      htmlFor: 'surname',
+      children: 'Фамилия',
+    },
+    {
+      type: ElementType.input,
+      id: 'surname',
+      placeholder: 'Введите фамилию',
+    },
+    {
+      type: ElementType.label,
+      id: '_name',
+      htmlFor: 'name',
+      children: 'Имя',
+    },
+    {
+      type: ElementType.input,
+      id: 'name',
+      placeholder: 'Введите имя',
+    },
+    {
+      type: ElementType.label,
+      id: '_middle_name',
+      htmlFor: 'middle_name',
+      children: 'Отчество',
+    },
+    {
+      type: ElementType.input,
+      id: 'middle_name',
+      placeholder: 'Введите отчество',
+    },
+    {
+      type: ElementType.label,
+      id: '_role',
+      htmlFor: 'role',
+      children: 'Должность',
+    },
+    {
+      type: ElementType.input,
+      id: 'role',
+      placeholder: 'Укажите должность',
+    },
+    {
+      type: ElementType.dateInput,
+      id: 'date_of_hire',
+      label: 'Принят на работу:',
+      placeholder: 'Выберите дату',
+    },
+    {
+      type: ElementType.label,
+      id: '_salary',
+      htmlFor: 'salary',
+      children: 'Заработная плата',
+    },
+    {
+      type: ElementType.input,
+      id: 'salary',
+      placeholder: 'Укажите з/п',
+    },
+  ],
 };
 
-export const initialValues: Record<string, Animal | WorkTime> = {
+export const initialValues: Record<string, Animal | WorkTime | Employee> = {
   animal: {
     nickname: '',
     species: '',
@@ -121,6 +185,14 @@ export const initialValues: Record<string, Animal | WorkTime> = {
     status: '',
     time: 0,
     request: false,
+  },
+  employees: {
+    name: '',
+    surname: '',
+    middle_name: '',
+    role: '',
+    salary: 0,
+    date_of_hire: '',
   },
 };
 
