@@ -1,10 +1,10 @@
 import { Animal } from '@custom-types/database/animal.ts';
+import { Employee } from '@custom-types/database/employee.ts';
 import { WorkTime } from '@custom-types/database/workTime.ts';
 import {
   ElementType,
   ElementVariant,
 } from '@pages/Modal/modals/elements/types.ts';
-import { Employee } from '@custom-types/database/employee.ts';
 
 export const fieldConfig: Record<string, ElementVariant[]> = {
   animal: [
