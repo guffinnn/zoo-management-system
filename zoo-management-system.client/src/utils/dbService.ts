@@ -1,4 +1,5 @@
 import { Animal } from '@custom-types/database/animal.ts';
+import { Employee } from '@custom-types/database/employee.ts';
 import { MedicalExamination } from '@custom-types/database/medicalExamination.ts';
 import { WorkTime } from '@custom-types/database/workTime.ts';
 import {
@@ -115,4 +116,32 @@ export async function getExaminations(): Promise<MedicalExamination[]> {
 
   cachedMedicalExaminations = examination;
   return examination;
+}
+
+let cachedEmployees: Employee[] | null = null;
+
+export async function getEmployees(): Promise<Employee[]> {
+  if (cachedEmployees) {
+    return cachedEmployees;
+  }
+
+  const querySnapshot = await getDocs(collection(db, 'employee'));
+  const employees = await Promise.all(
+    querySnapshot.docs.map(async (doc) => {
+      const data = doc.data();
+
+      return {
+        name: data.name,
+        surname: data.surname,
+        middle_name: data.middle_name,
+        role: data.role,
+        date_of_hire: data.date_of_hire,
+        salary: data.salary,
+        actions: '',
+      };
+    }),
+  );
+
+  cachedEmployees = employees;
+  return employees;
 }
