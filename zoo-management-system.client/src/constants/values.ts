@@ -42,6 +42,9 @@ export const STATUS_REJECTED_INFO =
 export const STATUS_CONFIRMED_INFO = {
   animal: 'Вы действительно хотите добавить новое животное?',
   workTime: 'Вы действительно хотите добавить выполненную работу?',
+  medicalExamination:
+    'Вы действительно хотите добавить медицинское обследование?',
+  employees: 'Вы действительно хотите добавить нового сотрудника?',
 };
 export const BUTTON_RETRY = 'Заново';
 export const BUTTON_ADD = 'Добавить';
