@@ -1,1 +1,5 @@
-export type DataType = 'animal' | 'workTime';
+export type DataType =
+  | 'animal'
+  | 'workTime'
+  | 'medicalExamination'
+  | 'employees';
