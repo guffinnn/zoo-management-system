@@ -42,7 +42,7 @@ function examinationsExam(): JSX.Element {
       <main className={`main ${isOpen && 'open'} ${isClosing && 'close'}`}>
         <Header pageTitle={PAGE_TITLE.MEDICAL_EXAMINATION}>
           <PrimaryButton
-            name={ADD.ANIMAL}
+            name={ADD.MEDICAL_EXAMINATION}
             linkTo={PATH.TO_ADD_MODAL.medicalExamination}
           />
         </Header>
