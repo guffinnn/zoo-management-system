@@ -1,3 +1,4 @@
+import { TABLE_NAMES } from '@constants/pages.ts';
 import { Animal } from '@custom-types/database/animal.ts';
 import { Employee } from '@custom-types/database/employee.ts';
 import { MedicalExamination } from '@custom-types/database/medicalExamination.ts';
@@ -18,7 +19,7 @@ export const searchMethods = {
     return sortDataByValue<Animal>({
       value,
       param: 'nickname',
-      collectionName: 'animal',
+      collectionName: TABLE_NAMES.ANIMAL,
       transformData: (data) => ({
         nickname: data.nickname,
         species: data.species,
@@ -34,7 +35,7 @@ export const searchMethods = {
     return sortDataByValue<Promise<WorkTime>>({
       value,
       param: 'date_of_work',
-      collectionName: 'workTime',
+      collectionName: TABLE_NAMES.WORKTIME,
       transformData: async (data, doc) => {
         const employeeRef = data.employee_id as DocumentReference;
         const employeeDoc = await getDoc(employeeRef);
@@ -77,7 +78,7 @@ export const searchMethods = {
     return sortDataByValue<Promise<MedicalExamination>>({
       value,
       param: 'date_of_examination',
-      collectionName: 'medicalExamination',
+      collectionName: TABLE_NAMES.MEDICAL_EXAMINATION,
       transformData: async (data) => {
         const animalRef = data.animal_id as DocumentReference;
         const animalDoc = await getDoc(animalRef);
@@ -99,7 +100,7 @@ export const searchMethods = {
     return sortDataByValue<Employee>({
       value,
       param: 'surname',
-      collectionName: 'employee',
+      collectionName: TABLE_NAMES.EMPLOYEES,
       transformData: (data) => ({
         surname: data.surname,
         name: data.name,

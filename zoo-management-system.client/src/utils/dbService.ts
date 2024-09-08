@@ -1,3 +1,4 @@
+import { TABLE_NAMES } from '@constants/pages.ts';
 import { Animal } from '@custom-types/database/animal.ts';
 import { Employee } from '@custom-types/database/employee.ts';
 import { MedicalExamination } from '@custom-types/database/medicalExamination.ts';
@@ -18,7 +19,7 @@ export async function getAnimals(): Promise<Animal[]> {
     return cachedAnimals;
   }
 
-  const querySnapshot = await getDocs(collection(db, 'animal'));
+  const querySnapshot = await getDocs(collection(db, TABLE_NAMES.ANIMAL));
   const animals = querySnapshot.docs.map((doc) => {
     const data = doc.data();
     return {
@@ -43,7 +44,7 @@ export async function getWorkTime(): Promise<WorkTime[]> {
     return cachedWorkTime;
   }
 
-  const querySnapshot = await getDocs(collection(db, 'workTime'));
+  const querySnapshot = await getDocs(collection(db, TABLE_NAMES.WORKTIME));
   const workTime = await Promise.all(
     querySnapshot.docs.map(async (doc) => {
       const data = doc.data();
@@ -93,7 +94,7 @@ export async function getExaminations(): Promise<MedicalExamination[]> {
     return cachedMedicalExaminations;
   }
 
-  const querySnapshot = await getDocs(collection(db, 'medicalExamination'));
+  const querySnapshot = await getDocs(collection(db, TABLE_NAMES.MEDICAL_EXAMINATION));
   const examination = await Promise.all(
     querySnapshot.docs.map(async (doc) => {
       const data = doc.data();
@@ -125,7 +126,7 @@ export async function getEmployees(): Promise<Employee[]> {
     return cachedEmployees;
   }
 
-  const querySnapshot = await getDocs(collection(db, 'employee'));
+  const querySnapshot = await getDocs(collection(db, TABLE_NAMES.EMPLOYEES));
   const employees = await Promise.all(
     querySnapshot.docs.map(async (doc) => {
       const data = doc.data();

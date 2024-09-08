@@ -20,3 +20,10 @@ export const LIST_ROWS: ListRow[] = [
   { name: 'Уборка', link: PATH.TO_CLEANING },
   { name: 'Сотрудники', link: PATH.TO_EMPLOYEES },
 ];
+
+export const TABLE_NAMES = {
+  ANIMAL: 'animal',
+  WORKTIME: 'workTime',
+  MEDICAL_EXAMINATION: 'medicalExamination',
+  EMPLOYEES: 'employee',
+};
