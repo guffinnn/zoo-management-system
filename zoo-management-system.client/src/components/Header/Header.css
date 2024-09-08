@@ -66,10 +66,15 @@ div.buttons__frame {
     gap: 8px;
 
     width: fit-content;
+    max-width: 350px;
     height: 40px;
 }
 
 @media(max-width: 600px) {
+    p.page__name {
+        width: calc(100% - 40px);
+    }
+
     div.buttons__frame.--not_empty {
         width: 100%;
     }
