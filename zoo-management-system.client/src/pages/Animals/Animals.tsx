@@ -46,7 +46,7 @@ function Animals(): JSX.Element {
           <PrimaryButton name={ADD.ANIMAL} linkTo={PATH.TO_ADD_MODAL.animal} />
         </Header>
         <section className="section">
-          <SearchBox />
+          <SearchBox<Animal> typeOfData="animal" setData={setAnimals} />
           <div className="page__content table__content">
             <Table columns={ANIMAL_TABLE_COLUMNS} data={memoizedAnimals} />
           </div>

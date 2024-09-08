@@ -47,7 +47,10 @@ function examinationsExam(): JSX.Element {
           />
         </Header>
         <section className="section">
-          <SearchBox />
+          <SearchBox<MedicalExamination>
+            typeOfData="medicalExamination"
+            setData={setExaminations}
+          />
           <div className="page__content table__content">
             <Table
               columns={MEDICAL_EXAMINATION_COLUMNS}

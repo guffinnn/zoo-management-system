@@ -47,7 +47,7 @@ function Employees(): JSX.Element {
           />
         </Header>
         <section className="section">
-          <SearchBox />
+          <SearchBox<Employee> typeOfData="employees" setData={setEmployees} />
           <div className="page__content table__content">
             <Table columns={EMPLOYEES_TABLE_COLUMNS} data={memoizedEmployees} />
           </div>
