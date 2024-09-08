@@ -45,7 +45,7 @@ button.add__button:hover {
 
 button.add__button:active {
     background: var(--primary-500);
-    box-shadow: inset 0 4px 12px var(--neutral-400);
+    box-shadow: inset 0 4px 12px #0000001e;
 }
 
 @media(max-width: 600px) {
