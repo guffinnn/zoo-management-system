@@ -47,7 +47,10 @@ function WorkTime(): JSX.Element {
           />
         </Header>
         <section className="section">
-          <SearchBox />
+          <SearchBox<WorkTimeType>
+            typeOfData="workTime"
+            setData={setWorkTime}
+          />
           <div className="page__content table__content">
             <Table columns={WORKTIME_TABLE_COLUMNS} data={memoizedWorkTime} />
           </div>
