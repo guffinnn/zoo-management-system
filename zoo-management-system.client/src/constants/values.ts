@@ -2,6 +2,7 @@
 export const ADD = {
   ANIMAL: 'Добавить животное',
   WORKTIME: 'Добавить работу',
+  MEDICAL_EXAMINATION: 'Добавить мед. обследование',
   EMPLOYEE: 'Добавить сотрудника',
 };
 export const DEFAULT_ACTIVE_KEY = 0;
@@ -22,8 +23,10 @@ export const ERROR = {
   DATE_TOO_LATE: 'Дата не может быть позже текущей',
   DATE_TOO_EARLY: 'Дата не может быть раньше текущей',
   TIME_MIN_VALUE: 'Время не может быть меньше полчаса',
+  NOTE_LENGTH_IS_LESS: 'Заключение должно быть больше 50 символов',
 };
 export const DEFAULT_MIN_LENGTH = 6;
+export const DEFAULT_MIN_CHARACTERS = 50;
 // For auth
 export const LOGIN_SUCCEEDED = 'Вход выполнен';
 export const LOGIN_FAILED = 'Вход не выполнен';
@@ -39,8 +42,14 @@ export const STATUS_REJECTED_INFO =
 export const STATUS_CONFIRMED_INFO = {
   animal: 'Вы действительно хотите добавить новое животное?',
   workTime: 'Вы действительно хотите добавить выполненную работу?',
+  medicalExamination:
+    'Вы действительно хотите добавить медицинское обследование?',
+  employees: 'Вы действительно хотите добавить нового сотрудника?',
 };
 export const BUTTON_RETRY = 'Заново';
 export const BUTTON_ADD = 'Добавить';
 export const BUTTON_EXIT = 'Выйти';
 export const BUTTON_DONT_ADD = 'Не добавлять';
+// For search
+export const DEFAULT_DEBOUNCE_DELAY = 500;
+export const DEFAULT_SEARCH_MIN_LENGTH = 2;

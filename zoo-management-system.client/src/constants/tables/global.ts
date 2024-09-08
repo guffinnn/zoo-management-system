@@ -1,5 +1,6 @@
 import { Animal } from '@custom-types/database/animal.ts';
 import { Employee } from '@custom-types/database/employee.ts';
+import { MedicalExamination } from '@custom-types/database/medicalExamination.ts';
 import { WorkTime } from '@custom-types/database/workTime.ts';
 import {
   ElementType,
@@ -105,6 +106,35 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       children: 'Запросить подтверждение работы',
     },
   ],
+  medicalExamination: [
+    {
+      type: ElementType.select,
+      id: 'animal',
+      label: 'Животное:',
+      options: [
+        { value: 'null', text: 'Выберите животное', disabled: true },
+        { value: 'lilya', text: 'Лиля' },
+        { value: 'shershulya', text: 'Шершуля' },
+      ],
+    },
+    {
+      type: ElementType.dateInput,
+      id: 'date_of_examination',
+      label: 'Дата проведения:',
+      placeholder: 'Выберите дату',
+    },
+    {
+      type: ElementType.label,
+      id: '_notes',
+      htmlFor: 'notes',
+      children: 'Заключение',
+    },
+    {
+      type: ElementType.textArea,
+      id: 'notes',
+      placeholder: `В заключении нужно выделить:\n1. Цель или причину обследования\n2. Заключение о состоянии здоровья`,
+    },
+  ],
   employees: [
     {
       type: ElementType.label,
@@ -170,7 +200,10 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
   ],
 };
 
-export const initialValues: Record<string, Animal | WorkTime | Employee> = {
+export const initialValues: Record<
+  string,
+  Animal | WorkTime | Employee | MedicalExamination
+> = {
   animal: {
     nickname: '',
     species: '',
@@ -185,6 +218,11 @@ export const initialValues: Record<string, Animal | WorkTime | Employee> = {
     status: '',
     time: 0,
     request: false,
+  },
+  medicalExamination: {
+    animal: '',
+    date_of_examination: '',
+    notes: '',
   },
   employees: {
     name: '',
