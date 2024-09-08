@@ -131,8 +131,8 @@ export async function getEmployees(): Promise<Employee[]> {
       const data = doc.data();
 
       return {
-        name: data.name,
         surname: data.surname,
+        name: data.name,
         middle_name: data.middle_name,
         role: data.role,
         date_of_hire: data.date_of_hire,
