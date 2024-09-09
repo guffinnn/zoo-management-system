@@ -38,14 +38,14 @@ function Home(): JSX.Element {
                 imgAlt="Перейти"
               />
               <Card
-                link={PATH.TO_HOME} // TODO: Change link
+                link={PATH.TO_EMPLOYEES}
                 maskColor="orange"
                 info="Сотрудники"
                 imgSrc={employee}
                 imgAlt="Перейти"
               />
               <Card
-                link={PATH.TO_HOME} // TODO: Change link
+                link={PATH.TO_EXAMINATION}
                 maskColor="blue"
                 info="Здоровье"
                 imgSrc={medicine}
