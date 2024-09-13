@@ -1,6 +1,6 @@
 /*THEAD*/
 th:nth-last-child(-n + 1) {
-    border-right: 0;
+    border-right: 0 !important;
 }
 
 p.head__cell__content {
