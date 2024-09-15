@@ -62,12 +62,18 @@ export const SearchParamsMenu = styled(Dropdown.Menu)`
 export const SearchParamsItem = styled(Dropdown.Item)`
   background: rgba(255, 255, 255, 0);
   border-radius: 6px;
+  margin-top: 4px;
 
   /* Inside auto layout */
   flex: none;
   order: 5;
   align-self: stretch;
   flex-grow: 0;
+  transition: background 0.3s ease-in-out;
+
+  &:nth-child(1) {
+    margin-top: 0;
+  }
 
   &:hover {
     background: #00000014;
@@ -79,7 +85,8 @@ export const SearchParamsItem = styled(Dropdown.Item)`
 
   &:active,
   &.active {
-    background-color: var(--primary-500);
+    transition: none;
+    background: var(--primary-500);
   }
 `;
 

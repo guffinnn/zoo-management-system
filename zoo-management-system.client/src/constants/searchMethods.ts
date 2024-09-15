@@ -20,7 +20,7 @@ export const searchMethods = {
       value,
       param: 'nickname',
       collectionName: TABLE_NAMES.ANIMAL,
-      transformData: (data) => ({
+      transformData: (data, doc) => ({
         nickname: data.nickname,
         species: data.species,
         gender: data.gender,
@@ -28,6 +28,7 @@ export const searchMethods = {
         date_of_registration: data.date_of_registration,
         photo: data.photo || 'Пусто',
         actions: '',
+        id: doc.id,
       }),
     });
   },
@@ -70,6 +71,7 @@ export const searchMethods = {
           status: data.status,
           time: data.time,
           actions: '',
+          id: doc.id,
         };
       },
     });
@@ -79,7 +81,7 @@ export const searchMethods = {
       value,
       param: 'date_of_examination',
       collectionName: TABLE_NAMES.MEDICAL_EXAMINATION,
-      transformData: async (data) => {
+      transformData: async (data, doc) => {
         const animalRef = data.animal_id as DocumentReference;
         const animalDoc = await getDoc(animalRef);
         const animalData = animalDoc.data() as {
@@ -92,6 +94,7 @@ export const searchMethods = {
           date_of_examination: data.date_of_examination,
           notes: data.notes,
           actions: '',
+          id: doc.id,
         };
       },
     });
@@ -101,7 +104,7 @@ export const searchMethods = {
       value,
       param: 'surname',
       collectionName: TABLE_NAMES.EMPLOYEES,
-      transformData: (data) => ({
+      transformData: (data, doc) => ({
         surname: data.surname,
         name: data.name,
         middle_name: data.middle_name,
@@ -109,6 +112,7 @@ export const searchMethods = {
         date_of_hire: data.date_of_hire,
         salary: data.salary,
         actions: '',
+        id: doc.id,
       }),
     });
   },

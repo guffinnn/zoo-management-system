@@ -29,8 +29,8 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       label: 'Пол:',
       options: [
         { value: 'null', text: 'Выберите пол', disabled: true },
-        { value: 'male', text: 'Мужской' },
-        { value: 'female', text: 'Женский' },
+        { value: 'Мужской', text: 'Муж.' },
+        { value: 'Женский', text: 'Жен.' },
       ],
     },
     {
@@ -75,9 +75,9 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
           text: 'Выберите работу',
           disabled: true,
         },
-        { value: 'feeding', text: 'Кормление' },
-        { value: 'cleaning', text: 'Уборка' },
-        { value: 'medical', text: 'Мед. осмотр' },
+        { value: 'Кормление', text: 'Кормление' },
+        { value: 'Уборка', text: 'Уборка' },
+        { value: 'Медицинский осмотр', text: 'Мед. осмотр' },
       ],
     },
     {
@@ -86,11 +86,11 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       label: 'Статус:',
       options: [
         {
-          value: 'done',
+          value: 'Выполнено',
           text: 'Выполнено',
         },
-        { value: 'in_work', text: 'В процессе' },
-        { value: 'planned', text: 'Назначено' },
+        { value: 'В процессе', text: 'В процессе' },
+        { value: 'Назначено', text: 'Назначено' },
       ],
     },
     {
@@ -210,6 +210,7 @@ export const initialValues: Record<
     gender: '',
     date_of_birth: '',
     date_of_registration: '',
+    id: '',
   },
   workTime: {
     employee: '',
@@ -218,11 +219,13 @@ export const initialValues: Record<
     status: '',
     time: 0,
     request: false,
+    id: '',
   },
   medicalExamination: {
     animal: '',
     date_of_examination: '',
     notes: '',
+    id: '',
   },
   employees: {
     name: '',
@@ -231,6 +234,7 @@ export const initialValues: Record<
     role: '',
     salary: 0,
     date_of_hire: '',
+    id: '',
   },
 };
 
