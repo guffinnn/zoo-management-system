@@ -1,5 +1,5 @@
 export interface MedicalExamination {
-  id?: string;
+  id: string;
   animal: string;
   date_of_examination: string;
   notes: string;

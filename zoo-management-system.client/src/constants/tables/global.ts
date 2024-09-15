@@ -29,8 +29,8 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       label: 'Пол:',
       options: [
         { value: 'null', text: 'Выберите пол', disabled: true },
-        { value: 'male', text: 'Мужской' },
-        { value: 'female', text: 'Женский' },
+        { value: 'Мужской', text: 'Муж.' },
+        { value: 'Женский', text: 'Жен.' },
       ],
     },
     {
@@ -75,9 +75,9 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
           text: 'Выберите работу',
           disabled: true,
         },
-        { value: 'feeding', text: 'Кормление' },
-        { value: 'cleaning', text: 'Уборка' },
-        { value: 'medical', text: 'Мед. осмотр' },
+        { value: 'Кормление', text: 'Кормление' },
+        { value: 'Уборка', text: 'Уборка' },
+        { value: 'Медицинский осмотр', text: 'Мед. осмотр' },
       ],
     },
     {
@@ -86,11 +86,11 @@ export const fieldConfig: Record<string, ElementVariant[]> = {
       label: 'Статус:',
       options: [
         {
-          value: 'done',
+          value: 'Выполнено',
           text: 'Выполнено',
         },
-        { value: 'in_work', text: 'В процессе' },
-        { value: 'planned', text: 'Назначено' },
+        { value: 'В процессе', text: 'В процессе' },
+        { value: 'Назначено', text: 'Назначено' },
       ],
     },
     {

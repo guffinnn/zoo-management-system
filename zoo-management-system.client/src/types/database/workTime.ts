@@ -1,5 +1,5 @@
 export interface WorkTime {
-  id?: string;
+  id: string;
   employee: string;
   date_of_work: string;
   type_of_work: string; // TODO: Delete
