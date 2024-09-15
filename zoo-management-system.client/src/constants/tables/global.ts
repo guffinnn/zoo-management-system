@@ -210,6 +210,7 @@ export const initialValues: Record<
     gender: '',
     date_of_birth: '',
     date_of_registration: '',
+    id: '',
   },
   workTime: {
     employee: '',
@@ -218,11 +219,13 @@ export const initialValues: Record<
     status: '',
     time: 0,
     request: false,
+    id: '',
   },
   medicalExamination: {
     animal: '',
     date_of_examination: '',
     notes: '',
+    id: '',
   },
   employees: {
     name: '',
@@ -231,6 +234,7 @@ export const initialValues: Record<
     role: '',
     salary: 0,
     date_of_hire: '',
+    id: '',
   },
 };
 
