@@ -1,3 +1,4 @@
+import ProtectedRoute from '@components/ProtectedRoute/ProtectedRoute.tsx';
 import { PATH } from '@constants/paths';
 import Animals from '@pages/Animals/Animals';
 import Cleaning from '@pages/Cleaning/Cleaning.tsx';
@@ -25,13 +26,62 @@ function App(): JSX.Element {
   return (
     <Router>
       <Routes>
-        <Route path={TO_HOME} element={<Home />} />
-        <Route path={TO_ANIMALS} element={<Animals />} />
-        <Route path={TO_FEEDING} element={<Feeding />} />
-        <Route path={TO_WORKTIME} element={<WorkTime />} />
-        <Route path={TO_EXAMINATION} element={<MedicalExam />} />
-        <Route path={TO_EMPLOYEES} element={<Employees />} />
-        <Route path={TO_CLEANING} element={<Cleaning />} />
+        <Route
+          path={TO_HOME}
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={TO_ANIMALS}
+          element={
+            <ProtectedRoute>
+              <Animals />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={TO_FEEDING}
+          element={
+            <ProtectedRoute>
+              <Feeding />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={TO_WORKTIME}
+          element={
+            <ProtectedRoute>
+              <WorkTime />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={TO_EXAMINATION}
+          element={
+            <ProtectedRoute>
+              <MedicalExam />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={TO_EMPLOYEES}
+          element={
+            <ProtectedRoute>
+              <Employees />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={TO_CLEANING}
+          element={
+            <ProtectedRoute>
+              <Cleaning />
+            </ProtectedRoute>
+          }
+        />
         <Route path={TO_MODAL} element={<Modal />} />
       </Routes>
     </Router>
