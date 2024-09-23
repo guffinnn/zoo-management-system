@@ -30,7 +30,7 @@ export async function sortDataByValue<T>({
   transformData,
 }: SortMethodsProps): Promise<T[]> {
   const collectionRef = collection(db, collectionName);
-  const q = query(collectionRef, where(param, '==', value));
+  const q = query(collectionRef, where(param, '>=', value));
   const querySnapshot = await getDocs(q);
 
   const sortedData: T[] = [];

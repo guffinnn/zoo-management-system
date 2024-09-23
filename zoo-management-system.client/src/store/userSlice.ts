@@ -9,7 +9,7 @@ interface UserState {
 
 const initialState: UserState = {
   isLoggedIn: false,
-  user: null,
+  user: JSON.parse(localStorage.getItem('user') || 'null'),
 };
 
 const userSlice = createSlice({
@@ -19,10 +19,12 @@ const userSlice = createSlice({
     setUser(state, action: PayloadAction<{ email: string } | null>) {
       state.isLoggedIn = true;
       state.user = action.payload;
+      localStorage.setItem('user', JSON.stringify(action.payload));
     },
     logOut(state) {
       state.isLoggedIn = false;
       state.user = null;
+      localStorage.removeItem('user');
     },
   },
 });

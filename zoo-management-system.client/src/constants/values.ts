@@ -36,20 +36,18 @@ export const CLOSE_WINDOW = 'Закрыть';
 export const EXIT_ACCOUNT = 'Выйти из аккаунта';
 // For status
 export const STATUS_REJECTED = 'Отклонено';
-export const STATUS_CONFIRMED = 'Подтверждение';
+export const STATUS_CONFIRMED = 'Успешно';
 export const STATUS_REJECTED_INFO =
-  'Проверьте подключение к сети Интернет и попробуйте еще раз';
+  'Похоже что мы столкнулись с ошибкой добавления данных. Повторите запрос позже';
 export const STATUS_CONFIRMED_INFO = {
-  animal: 'Вы действительно хотите добавить новое животное?',
-  workTime: 'Вы действительно хотите добавить выполненную работу?',
+  animal: 'Журнал учета животных был обновлен. Нажмите "ОК" для выхода',
+  workTime: 'Журнал учета рабочего времени обновлен. Нажмите "ОК" для выхода',
   medicalExamination:
-    'Вы действительно хотите добавить медицинское обследование?',
-  employees: 'Вы действительно хотите добавить нового сотрудника?',
+    'Журнал учета мед. обследований обновлен. Нажмите "ОК" для выхода',
+  employees: 'Список сотрудников обновлен. Нажмите "ОК" для выхода',
 };
-export const BUTTON_RETRY = 'Заново';
-export const BUTTON_ADD = 'Добавить';
-export const BUTTON_EXIT = 'Выйти';
-export const BUTTON_DONT_ADD = 'Не добавлять';
+export const BUTTON_RETRY = 'Выйти';
+export const BUTTON_ADD = 'ОК';
 // For search
 export const DEFAULT_DEBOUNCE_DELAY = 500;
 export const DEFAULT_SEARCH_MIN_LENGTH = 2;

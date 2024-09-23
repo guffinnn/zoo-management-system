@@ -140,10 +140,7 @@ export async function getWorkTimeById(id: string): Promise<WorkTime | null> {
 
       let workTypeName = 'Неизвестно';
       if (detailsData && detailsData.worktype_id) {
-        const workTypeRef = document(db, `workType/${detailsData.worktype_id}`);
-        const workTypeDoc = await getDoc(workTypeRef);
-        const workTypeData = workTypeDoc.data() as { name: string };
-        workTypeName = workTypeData.name;
+        workTypeName = detailsData.worktype_id;
       }
 
       return {
@@ -212,14 +209,11 @@ export async function getExaminationById(
 
       const animalRef = data.animal_id;
       const animalDoc = await getDoc(animalRef);
-      const animalData = animalDoc.data() as {
-        nickname: string;
-        species: string;
-      };
+      const animalData = animalDoc.id;
 
       return {
         id: docSnap.id,
-        animal: `${animalData.nickname}, ${animalData.species}`,
+        animal: animalData,
         date_of_examination: data.date_of_examination,
         notes: data.notes,
         actions: '',

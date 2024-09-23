@@ -22,9 +22,10 @@ export const useAuth = (userData: UserState) => {
       } else {
         dispatch(logOutFromRedux());
         logOut();
+        navigate(PATH.TO_AUTH_MODAL);
       }
     });
 
     return () => unsubscribe();
-  }, [userData, dispatch]);
+  }, [userData, dispatch, navigate]);
 };
