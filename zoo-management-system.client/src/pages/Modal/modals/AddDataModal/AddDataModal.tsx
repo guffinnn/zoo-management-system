@@ -45,7 +45,6 @@ function AddDataModal({ id }: { id?: string }): JSX.Element {
           validationSchema={validationSchema}
           enableReinitialize
           onSubmit={async (values) => {
-            console.log(values);
             let isSend = true;
             try {
               if (!navigator.onLine) {

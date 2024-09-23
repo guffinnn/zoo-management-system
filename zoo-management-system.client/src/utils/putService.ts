@@ -1,8 +1,8 @@
 import { TABLE_NAMES } from '@constants/pages.ts';
 import { Animal } from '@custom-types/database/animal.ts';
 import { Employee } from '@custom-types/database/employee.ts';
-import { MedicalExamination } from '@custom-types/database/medicalExamination.ts';
-import { WorkTime } from '@custom-types/database/workTime.ts';
+/*import { MedicalExamination } from '@custom-types/database/medicalExamination.ts';
+import { WorkTime } from '@custom-types/database/workTime.ts';*/
 import {
   addDoc,
   collection,
@@ -31,11 +31,12 @@ export async function putAnimal(animal: Animal) {
   }
 }
 
-export async function putWorkTime(workTime: WorkTime) {
-  const employeeRef = document(
+export async function putWorkTime(/*workTime: WorkTime*/) {
+  throw new Error();
+  /*const employeeRef = document(
     db,
     'employee',
-    workTime.employee_id ?? 'Y1JXT7IpRSzS9JKRSb2s',
+    workTime.employee, // TODO: Add ID
   );
 
   const workTimeForDB = {
@@ -74,14 +75,15 @@ export async function putWorkTime(workTime: WorkTime) {
       worktimedetails_id: workTimeDetailsRef,
     },
     { merge: true },
-  );
+  );*/
 }
 
-export async function putExamination(examination: MedicalExamination) {
-  const animalRef = document(
+export async function putExamination(/*examination: MedicalExamination*/) {
+  throw new Error();
+  /*const animalRef = document(
     db,
     'animal',
-    examination.animal_id ?? 'euZQz6eChktDiGFaSfJq',
+    examination.animal, // TODO: Add ID
   );
 
   const examinationForDB = {
@@ -100,7 +102,7 @@ export async function putExamination(examination: MedicalExamination) {
   } else {
     const collectionRef = collection(db, TABLE_NAMES.MEDICAL_EXAMINATION);
     await addDoc(collectionRef, examinationForDB);
-  }
+  }*/
 }
 
 export async function putEmployee(employee: Employee) {
