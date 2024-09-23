@@ -11,6 +11,8 @@ export type DataType =
 
 export type EntityData = Animal | WorkTime | MedicalExamination | Employee;
 
+export type EntityDataUnion = Animal & WorkTime & MedicalExamination & Employee;
+
 export type TableData =
   | Animal[]
   | WorkTime[]
