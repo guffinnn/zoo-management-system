@@ -3,8 +3,8 @@ import './AddDataModal.css';
 import { PATH } from '@constants/paths.ts';
 import { fieldConfig, initialValues } from '@constants/tables/global.ts';
 import { validationSchemas } from '@constants/validationSchemas.ts';
-import { DataType } from '@custom-types/dataType.ts';
-import { dataFetchers } from '@helpers/addDataModalHelpers.ts';
+import { DataType, EntityDataUnion } from '@custom-types/dataType.ts';
+import { dataFetchers, dataPushers } from '@helpers/addDataModalHelpers.ts';
 import {
   FormFrame,
   ModalContainer,
@@ -44,11 +44,21 @@ function AddDataModal({ id }: { id?: string }): JSX.Element {
           initialValues={currentValues}
           validationSchema={validationSchema}
           enableReinitialize
-          onSubmit={(values) => {
+          onSubmit={async (values) => {
             console.log(values);
-
-            const TO_MODAL = PATH.TO_VALIDATION_MODAL;
-            navigate(TO_MODAL[dataType!]);
+            let isSend = true;
+            try {
+              if (!navigator.onLine) {
+                throw new Error('No Internet connection');
+              }
+              const pushData = dataPushers[dataType!];
+              await pushData(values as EntityDataUnion);
+            } catch {
+              isSend = false;
+            } finally {
+              const TO_MODAL = PATH.TO_VALIDATION_MODAL;
+              navigate(TO_MODAL[dataType!], { state: { status: isSend } });
+            }
           }}
         >
           {({ handleSubmit }) => (
