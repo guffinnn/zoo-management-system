@@ -14,7 +14,7 @@ export const useAuth = (userData: UserState) => {
     const unsubscribe = observeAuthState((user) => {
       if (user) {
         if (user.email) {
-          dispatch(setUser({ email: user.email }));
+          dispatch(setUser({ uid: user.uid, email: user.email }));
           navigate(PATH.TO_STATUS_MODAL);
         } else {
           console.log('Ошибка: User is not null');

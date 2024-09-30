@@ -3,6 +3,7 @@ import Header from '@components/Header/Header.tsx';
 import PrimaryButton from '@components/PrimaryButton/PrimaryButton.tsx';
 import SearchBox from '@components/SearchBox/SearchBox.tsx';
 import Table from '@components/Table/Table.tsx';
+import StyledToastContainer from '@components/ToastContainer/ToastContainer.tsx';
 import { PAGE_TITLE } from '@constants/pages.ts';
 import { PATH } from '@constants/paths.ts';
 import { WORKTIME_TABLE_COLUMNS } from '@constants/tables/workTime.ts';
@@ -55,6 +56,7 @@ function WorkTime(): JSX.Element {
             <Table columns={WORKTIME_TABLE_COLUMNS} data={memoizedWorkTime} />
           </div>
         </section>
+        <StyledToastContainer />
       </main>
     </>
   );

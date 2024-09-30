@@ -5,6 +5,7 @@ import Header from '@components/Header/Header';
 import PrimaryButton from '@components/PrimaryButton/PrimaryButton';
 import SearchBox from '@components/SearchBox/SearchBox';
 import Table from '@components/Table/Table';
+import StyledToastContainer from '@components/ToastContainer/ToastContainer.tsx';
 import { PAGE_TITLE } from '@constants/pages.ts';
 import { PATH } from '@constants/paths.ts';
 import { ANIMAL_TABLE_COLUMNS } from '@constants/tables/animal.ts';
@@ -51,6 +52,7 @@ function Animals(): JSX.Element {
             <Table columns={ANIMAL_TABLE_COLUMNS} data={memoizedAnimals} />
           </div>
         </section>
+        <StyledToastContainer />
       </main>
     </>
   );

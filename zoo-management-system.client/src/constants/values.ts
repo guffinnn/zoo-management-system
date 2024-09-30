@@ -50,4 +50,14 @@ export const BUTTON_RETRY = 'Выйти';
 export const BUTTON_ADD = 'ОК';
 // For search
 export const DEFAULT_DEBOUNCE_DELAY = 500;
+export const DEFAULT_DELAY = 3000;
 export const DEFAULT_SEARCH_MIN_LENGTH = 2;
+// For DB messages
+export const DB = {
+  SUCCESS_CREATION: 'Запись добавлена',
+  SUCCESS_EDITING: 'Запись изменена',
+  SUCCESS_DELETION: 'Запись удалена (тестовое сообщение)', // TODO: Change to correct message
+  FAIL_CREATION: 'Ошибка при добавлении новой записи',
+  FAIL_EDITING: 'Ошибка при редактировании записи',
+  FAIL_DELETION: 'Ошибка при удалении записи',
+};

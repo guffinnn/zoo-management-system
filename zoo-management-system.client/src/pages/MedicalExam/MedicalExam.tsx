@@ -3,6 +3,7 @@ import Header from '@components/Header/Header.tsx';
 import PrimaryButton from '@components/PrimaryButton/PrimaryButton.tsx';
 import SearchBox from '@components/SearchBox/SearchBox.tsx';
 import Table from '@components/Table/Table.tsx';
+import StyledToastContainer from '@components/ToastContainer/ToastContainer.tsx';
 import { PAGE_TITLE } from '@constants/pages.ts';
 import { PATH } from '@constants/paths.ts';
 import { MEDICAL_EXAMINATION_COLUMNS } from '@constants/tables/medicalExamination.ts';
@@ -58,6 +59,7 @@ function examinationsExam(): JSX.Element {
             />
           </div>
         </section>
+        <StyledToastContainer />
       </main>
     </>
   );
