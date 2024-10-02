@@ -102,3 +102,10 @@ p.cell__content.planned {
 
     color: var(--neutral-500);
 }
+
+.frame {
+    position: absolute;
+    right: -50px;
+    border: 90px solid #00000000;
+    display: flex;
+}
