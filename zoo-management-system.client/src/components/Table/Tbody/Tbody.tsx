@@ -1,5 +1,6 @@
 import './Tbody.css';
 
+import ImageOverlay from '@components/ImageOverlay/ImageOverlay.tsx';
 import { TableProps } from '@components/Table/Table';
 import { PATH } from '@constants/paths.ts';
 import { DB } from '@constants/values.ts';
@@ -40,12 +41,18 @@ function Tbody({ columns, data }: TableProps): JSX.Element {
               field !== 'id' && (
                 <td key={i} className="cell">
                   {columns[i]?.name !== 'Статус' ? (
-                    <p className={`cell__content ${columns[i]?.type}`}>
+                    <p
+                      className={`cell__content ${columns[i]?.type} ${value !== 'Пусто' && '--active'}`}
+                    >
                       {field === 'actions' ? (
                         <div
                           className="delete"
                           onClick={(e) => handleDeleteAnimal(e)}
                         ></div>
+                      ) : field === 'photo' && value !== 'Пусто' ? (
+                        <ImageOverlay value={value}>
+                          <div className="frame">{'Фото'}</div>
+                        </ImageOverlay>
                       ) : (
                         value
                       )}
