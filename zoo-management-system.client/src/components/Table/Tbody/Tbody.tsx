@@ -3,11 +3,14 @@ import './Tbody.css';
 import ImageOverlay from '@components/ImageOverlay/ImageOverlay.tsx';
 import { TableProps } from '@components/Table/Table';
 import { PATH } from '@constants/paths.ts';
-import { DB } from '@constants/values.ts';
 import { DataType, EntityData } from '@custom-types/dataType.ts';
+import {
+  getClassNames,
+  handleDeleteAnimal,
+  isNotEmpty,
+} from '@helpers/tbodyHelpers.ts';
 import { getDataType, getStatus } from '@helpers/tbodyHelpers.tsx';
-import { addNotification } from '@store/notificationSlice.ts';
-import React, { JSX } from 'react';
+import { JSX } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -22,16 +25,6 @@ function Tbody({ columns, data }: TableProps): JSX.Element {
     navigate(editPath);
   };
 
-  const handleDeleteAnimal = (event: React.MouseEvent<HTMLDivElement>) => {
-    try {
-      event.stopPropagation();
-      // TODO: Add delete functionality
-      dispatch(addNotification(DB.SUCCESS_DELETION));
-    } catch (error) {
-      dispatch(addNotification(DB.FAIL_DELETION));
-    }
-  };
-
   return (
     <>
       {data.map((entity) => (
@@ -41,15 +34,13 @@ function Tbody({ columns, data }: TableProps): JSX.Element {
               field !== 'id' && (
                 <td key={i} className="cell">
                   {columns[i]?.name !== 'Статус' ? (
-                    <p
-                      className={`cell__content ${columns[i]?.type} ${value !== 'Пусто' && '--active'}`}
-                    >
+                    <p className={getClassNames(columns[i]?.type, value)}>
                       {field === 'actions' ? (
                         <div
                           className="delete"
-                          onClick={(e) => handleDeleteAnimal(e)}
+                          onClick={(e) => handleDeleteAnimal(e, dispatch)}
                         ></div>
-                      ) : field === 'photo' && value !== 'Пусто' ? (
+                      ) : field === 'photo' && isNotEmpty(value) ? (
                         <ImageOverlay value={value}>
                           <div className="frame">{'Фото'}</div>
                         </ImageOverlay>
