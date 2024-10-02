@@ -108,8 +108,6 @@ tbody .document:before {
 tbody .eye:after,
 tbody .delete:before,
 tbody .edit:after {
-    content: url(../../assets/eye.svg);
-
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -123,6 +121,18 @@ tbody .edit:after {
     border-radius: 8px;
 
     cursor: pointer;
+}
+
+tbody .eye:after {
+    content: url(../../assets/eye-sleep.svg);
+    height: 8px;
+    padding: 13px 6px 6px;
+}
+
+tbody .eye.--active:after {
+    content: url(../../assets/eye.svg);
+    height: 16px;
+    padding: 8px 6px 3px 6px;
 }
 
 tbody .delete:before {

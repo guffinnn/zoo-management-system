@@ -9,8 +9,9 @@ import {
   getDoc,
   getDocs,
 } from 'firebase/firestore';
+import { getDownloadURL, ref } from 'firebase/storage';
 
-import { db } from '../firebase';
+import { db, storage } from '../firebase';
 
 let cachedAnimals: Animal[] | null = null;
 
@@ -20,19 +21,36 @@ export async function getAnimals(): Promise<Animal[]> {
   }
 
   const querySnapshot = await getDocs(collection(db, TABLE_NAMES.ANIMAL));
-  const animals = querySnapshot.docs.map((doc) => {
-    const data = doc.data();
-    return {
-      nickname: data.nickname,
-      species: data.species,
-      gender: data.gender,
-      date_of_birth: data.date_of_birth,
-      date_of_registration: data.date_of_registration,
-      photo: data.photo || 'Пусто',
-      actions: '',
-      id: doc.id,
-    };
-  });
+  const animals = await Promise.all(
+    querySnapshot.docs.map(async (doc) => {
+      const data = doc.data();
+
+      let imageURL = 'Пусто';
+      if (data.photo !== null) {
+        const imageRef = ref(
+          storage,
+          `gs://zoo-management-system-86971.appspot.com/animal/${data.photo}`,
+        );
+
+        try {
+          imageURL = await getDownloadURL(imageRef);
+        } catch (error) {
+          console.error('Error fetching image URL:', error);
+        }
+      }
+
+      return {
+        nickname: data.nickname,
+        species: data.species,
+        gender: data.gender,
+        date_of_birth: data.date_of_birth,
+        date_of_registration: data.date_of_registration,
+        photo: imageURL,
+        actions: '',
+        id: doc.id,
+      };
+    }),
+  );
 
   cachedAnimals = animals;
   return animals;
