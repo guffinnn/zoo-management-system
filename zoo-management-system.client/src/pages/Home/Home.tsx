@@ -17,6 +17,7 @@ function Home(): JSX.Element {
   const isOpen = useSelector((state: RootState) => state.menu.isOpen);
   const isClosing = useSelector((state: RootState) => state.menu.isClosing);
   const dispatch = useDispatch();
+  const isAdmin = useSelector((state: RootState) => state.user.user?.is_admin);
 
   useEffect(() => {
     setCloseAnimation({ isClosing, dispatch });
@@ -37,13 +38,23 @@ function Home(): JSX.Element {
                 imgSrc={gibbon}
                 imgAlt="Перейти"
               />
-              <Card
-                link={PATH.TO_EMPLOYEES}
-                maskColor="orange"
-                info="Сотрудники"
-                imgSrc={employee}
-                imgAlt="Перейти"
-              />
+              {isAdmin ? (
+                <Card
+                  link={PATH.TO_EMPLOYEES}
+                  maskColor="orange"
+                  info="Сотрудники"
+                  imgSrc={employee}
+                  imgAlt="Перейти"
+                />
+              ) : (
+                <Card
+                  link={PATH.TO_WORKTIME}
+                  maskColor="orange"
+                  info="Работа"
+                  imgSrc={employee}
+                  imgAlt="Перейти"
+                />
+              )}
               <Card
                 link={PATH.TO_EXAMINATION}
                 maskColor="blue"

@@ -6,10 +6,11 @@ import { PATH } from '@constants/paths.ts';
 import { DataType, EntityData } from '@custom-types/dataType.ts';
 import {
   getClassNames,
+  getDataType,
+  getStatus,
   handleDeleteAnimal,
   isNotEmpty,
-} from '@helpers/tbodyHelpers.ts';
-import { getDataType, getStatus } from '@helpers/tbodyHelpers.tsx';
+} from '@helpers/tbodyHelpers.tsx';
 import { JSX } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';

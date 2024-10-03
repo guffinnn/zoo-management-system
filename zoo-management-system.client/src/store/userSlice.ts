@@ -5,6 +5,7 @@ interface UserState {
   user: {
     uid: string;
     email: string;
+    is_admin: boolean;
   } | null;
 }
 
@@ -19,7 +20,11 @@ const userSlice = createSlice({
   reducers: {
     setUser(
       state,
-      action: PayloadAction<{ uid: string; email: string } | null>,
+      action: PayloadAction<{
+        uid: string;
+        email: string;
+        is_admin: boolean;
+      } | null>,
     ) {
       state.isLoggedIn = true;
       state.user = action.payload;
