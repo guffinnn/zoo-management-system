@@ -8,4 +8,5 @@ export interface Employee {
   salary: number;
   date_of_hire: string;
   actions?: string;
+  is_admin?: boolean;
 }

@@ -14,6 +14,7 @@ function AsideNavBar(): JSX.Element {
   const isOpen = useSelector((state: RootState) => state.menu.isOpen);
   const isClosing = useSelector((state: RootState) => state.menu.isClosing);
   const location = useLocation();
+  const isAdmin = useSelector((state: RootState) => state.user.user?.is_admin);
 
   useEffect(() => {
     setActiveKeyByLocation({
@@ -29,15 +30,20 @@ function AsideNavBar(): JSX.Element {
           className={`aside__nav ${isOpen && 'open'} ${isClosing && 'close'}`}
         >
           <ul className="aside__ul__list">
-            {LIST_ROWS.map((item, index) => (
-              <NavListPoint
-                key={index}
-                componentKey={index}
-                pageItem={item}
-                activeKey={activeKey}
-                setActiveKey={setActiveKey}
-              />
-            ))}
+            {LIST_ROWS.map((item, index) => {
+              if (!isAdmin && item.name === 'Сотрудники') {
+                return null; // Display page for admins only
+              }
+              return (
+                <NavListPoint
+                  key={index}
+                  componentKey={index}
+                  pageItem={item}
+                  activeKey={activeKey}
+                  setActiveKey={setActiveKey}
+                />
+              );
+            })}
           </ul>
         </nav>
         <Footer />
