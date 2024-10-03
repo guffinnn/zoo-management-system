@@ -33,12 +33,16 @@ export const signIn = async (values: UserState, dispatch: Dispatch) => {
         values.password,
       );
       if (userCredential.user.email) {
-        dispatch(
-          setUser({
-            uid: userCredential.user.uid,
-            email: userCredential.user.email,
-          }),
-        );
+        const employee = await getEmployeeByUserUid(userCredential.user.uid);
+        if (employee) {
+          dispatch(
+            setUser({
+              uid: userCredential.user.uid,
+              email: userCredential.user.email,
+              is_admin: employee?.is_admin || false,
+            }),
+          );
+        }
       }
     }
   } catch (error) {
@@ -69,6 +73,7 @@ export async function getEmployeeByUserUid(
         date_of_hire: data.date_of_hire,
         salary: data.salary,
         actions: '',
+        is_admin: data?.is_admin,
       };
     } else {
       console.log('No such document!');
