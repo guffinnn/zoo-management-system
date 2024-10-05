@@ -20,6 +20,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function Animals(): JSX.Element {
   const isOpen = useSelector((state: RootState) => state.menu.isOpen);
   const isClosing = useSelector((state: RootState) => state.menu.isClosing);
+  const refreshID = useSelector((state: RootState) => state.refresh.refreshID);
   const dispatch = useDispatch();
   const [animals, setAnimals] = useState<Animal[]>([]);
 
@@ -29,13 +30,15 @@ function Animals(): JSX.Element {
   }, [isClosing, dispatch]);
 
   // Get animals data effect
+  const fetchAnimals = async () => {
+    return await getAnimals();
+  };
+
   useEffect(() => {
-    const fetchAnimals = async () => {
-      const data = await getAnimals();
-      setAnimals(data);
-    };
-    fetchAnimals();
-  }, []);
+    fetchAnimals().then((data) => {
+      setAnimals(data.filter((animal) => animal.id !== refreshID));
+    });
+  }, [refreshID]);
 
   const memoizedAnimals = useMemo(() => animals, [animals]);
 

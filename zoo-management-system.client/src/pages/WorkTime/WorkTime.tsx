@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function WorkTime(): JSX.Element {
   const isOpen = useSelector((state: RootState) => state.menu.isOpen);
   const isClosing = useSelector((state: RootState) => state.menu.isClosing);
+  const refreshID = useSelector((state: RootState) => state.refresh.refreshID);
   const dispatch = useDispatch();
   const [workTime, setWorkTime] = useState<WorkTimeType[]>([]);
 
@@ -27,13 +28,15 @@ function WorkTime(): JSX.Element {
   }, [isClosing, dispatch]);
 
   // Get workTime data effect
+  const fetchWorkTime = async () => {
+    return await getWorkTime();
+  };
+
   useEffect(() => {
-    const fetchWorkTime = async () => {
-      const data = await getWorkTime();
-      setWorkTime(data);
-    };
-    fetchWorkTime();
-  }, []);
+    fetchWorkTime().then((data) => {
+      setWorkTime(data.filter((workTime) => workTime.id !== refreshID));
+    });
+  }, [refreshID]);
 
   const memoizedWorkTime = useMemo(() => workTime, [workTime]);
 
