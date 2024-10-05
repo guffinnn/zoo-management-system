@@ -8,7 +8,7 @@ import {
   getClassNames,
   getDataType,
   getStatus,
-  handleDeleteAnimal,
+  handleDelete,
   isNotEmpty,
 } from '@helpers/tbodyHelpers.tsx';
 import { JSX } from 'react';
@@ -39,7 +39,14 @@ function Tbody({ columns, data }: TableProps): JSX.Element {
                       {field === 'actions' ? (
                         <div
                           className="delete"
-                          onClick={(e) => handleDeleteAnimal(e, dispatch)}
+                          onClick={(e) =>
+                            handleDelete({
+                              event: e,
+                              dispatch,
+                              tableName: dataType,
+                              id: entity.id,
+                            })
+                          }
                         ></div>
                       ) : field === 'photo' && isNotEmpty(value) ? (
                         <ImageOverlay value={value}>

@@ -1,6 +1,8 @@
 import { DB } from '@constants/values.ts';
 import { DataType } from '@custom-types/dataType.ts';
 import { addNotification } from '@store/notificationSlice.ts';
+import { refreshData } from '@store/refreshSlice.ts';
+import { deleteEntityByTableAndId } from '@utils/deleteService.ts';
 import React from 'react';
 import { Location } from 'react-router-dom';
 import { Dispatch } from 'redux';
@@ -33,14 +35,26 @@ export const isNotEmpty = (value: string): boolean => value !== 'Пусто';
 export const getClassNames = (type: string, value: string): string =>
   `cell__content ${type} ${isNotEmpty(value) && '--active'}`;
 
-export const handleDeleteAnimal = (
-  event: React.MouseEvent<HTMLDivElement>,
-  dispatch: Dispatch,
-): void => {
+interface HandleDeleteProps {
+  event: React.MouseEvent<HTMLDivElement>;
+  dispatch: Dispatch;
+  tableName: string;
+  id: string;
+}
+
+export const handleDelete = async ({
+  event,
+  dispatch,
+  tableName,
+  id,
+}: HandleDeleteProps): Promise<void> => {
   try {
     event.stopPropagation();
-    // TODO: Add delete functionality
+
+    await deleteEntityByTableAndId({ tableName, id });
+
     dispatch(addNotification(DB.SUCCESS_DELETION));
+    dispatch(refreshData(id));
   } catch (error) {
     dispatch(addNotification(DB.FAIL_DELETION));
   }

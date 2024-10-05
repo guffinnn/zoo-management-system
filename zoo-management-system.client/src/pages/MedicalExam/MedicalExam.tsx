@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function examinationsExam(): JSX.Element {
   const isOpen = useSelector((state: RootState) => state.menu.isOpen);
   const isClosing = useSelector((state: RootState) => state.menu.isClosing);
+  const refreshID = useSelector((state: RootState) => state.refresh.refreshID);
   const dispatch = useDispatch();
   const [examinations, setExaminations] = useState<MedicalExamination[]>([]);
 
@@ -27,13 +28,17 @@ function examinationsExam(): JSX.Element {
   }, [isClosing, dispatch]);
 
   // Get examinations information data effect
+  const fetchExaminations = async () => {
+    return await getExaminations();
+  };
+
   useEffect(() => {
-    const fetchExaminations = async () => {
-      const data = await getExaminations();
-      setExaminations(data);
-    };
-    fetchExaminations();
-  }, []);
+    fetchExaminations().then((data) => {
+      setExaminations(
+        data.filter((examination) => examination.id !== refreshID),
+      );
+    });
+  }, [refreshID]);
 
   const memoizedExaminations = useMemo(() => examinations, [examinations]);
 
