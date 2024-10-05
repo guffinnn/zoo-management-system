@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import menuReducer from '@store/menuSlice.ts';
 import notificationReducer from '@store/notificationSlice.ts';
+import refreshReducer from '@store/refreshSlice.ts';
 import userReducer from '@store/userSlice.ts';
 
 const store = configureStore({
@@ -8,6 +9,7 @@ const store = configureStore({
     menu: menuReducer,
     user: userReducer,
     notifications: notificationReducer,
+    refresh: refreshReducer,
   },
 });
 
