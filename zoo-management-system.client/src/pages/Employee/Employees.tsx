@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function Employees(): JSX.Element {
   const isOpen = useSelector((state: RootState) => state.menu.isOpen);
   const isClosing = useSelector((state: RootState) => state.menu.isClosing);
+  const refreshID = useSelector((state: RootState) => state.refresh.refreshID);
   const dispatch = useDispatch();
   const [employees, setEmployees] = useState<Employee[]>([]);
 
@@ -27,13 +28,15 @@ function Employees(): JSX.Element {
   }, [isClosing, dispatch]);
 
   // Get employees data effect
+  const fetchEmployees = async () => {
+    return await getEmployees();
+  };
+
   useEffect(() => {
-    const fetchEmployees = async () => {
-      const data = await getEmployees();
-      setEmployees(data);
-    };
-    fetchEmployees();
-  }, []);
+    fetchEmployees().then((data) => {
+      setEmployees(data.filter((employee) => employee.id !== refreshID));
+    });
+  }, [refreshID]);
 
   const memoizedEmployees = useMemo(() => employees, [employees]);
 

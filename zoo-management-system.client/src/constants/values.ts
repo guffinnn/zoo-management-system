@@ -54,9 +54,9 @@ export const DEFAULT_DELAY = 3000;
 export const DEFAULT_SEARCH_MIN_LENGTH = 2;
 // For DB messages
 export const DB = {
-  SUCCESS_CREATION: 'Запись добавлена',
-  SUCCESS_EDITING: 'Запись изменена',
-  SUCCESS_DELETION: 'Запись удалена (тестовое сообщение)', // TODO: Change to correct message
+  SUCCESS_CREATION: 'Запись добавлена. Обновите страницу',
+  SUCCESS_EDITING: 'Запись изменена. Обновите страницу',
+  SUCCESS_DELETION: 'Запись удалена',
   FAIL_CREATION: 'Ошибка при добавлении новой записи',
   FAIL_EDITING: 'Ошибка при редактировании записи',
   FAIL_DELETION: 'Ошибка при удалении записи',
