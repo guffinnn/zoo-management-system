@@ -1,5 +1,6 @@
 import { PATH } from '@constants/paths.ts';
 import { UserState } from '@custom-types/user.ts';
+import { addNotification } from '@store/notificationSlice.ts';
 import { logOut as logOutFromRedux, setUser } from '@store/userSlice';
 import {
   getEmployeeByUserUid,
@@ -9,7 +10,6 @@ import {
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addNotification } from '@store/notificationSlice.ts';
 
 export const useAuth = (userData: UserState) => {
   const dispatch = useDispatch();

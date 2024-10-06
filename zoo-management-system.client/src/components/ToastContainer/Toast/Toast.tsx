@@ -21,14 +21,17 @@ function Toast({ notification }: ToastProps): JSX.Element {
   const dispatch = useDispatch();
 
   const handleClose = (id: number) => {
-    setShow(!show);
-    dispatch(removeNotification(id));
+    const onHide = () => dispatch(removeNotification(id));
+
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    setShow({ showInitial: !show, onHide: onHide });
   };
 
   return (
     <StyledToast
       key={notification.id}
-      show={show}
+      show={show as boolean}
       delay={DEFAULT_DELAY}
       autohide
       onClose={() => handleClose(notification.id!)}
