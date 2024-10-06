@@ -1,6 +1,7 @@
 import { Employee } from '@custom-types/database/employee.ts';
 import { UserState } from '@custom-types/user.ts';
 import { Dispatch } from '@reduxjs/toolkit';
+import { addNotification } from '@store/notificationSlice.ts';
 import { setUser } from '@store/userSlice.ts';
 import { User } from 'firebase/auth';
 import {
@@ -46,7 +47,12 @@ export const signIn = async (values: UserState, dispatch: Dispatch) => {
       }
     }
   } catch (error) {
-    console.log(error);
+    dispatch(
+      addNotification({
+        type: 'error',
+        message: 'Ошибка входа в аккаунт',
+      }),
+    );
   }
 };
 
