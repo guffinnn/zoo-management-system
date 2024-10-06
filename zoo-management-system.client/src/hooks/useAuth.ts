@@ -9,6 +9,7 @@ import {
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { addNotification } from '@store/notificationSlice.ts';
 
 export const useAuth = (userData: UserState) => {
   const dispatch = useDispatch();
@@ -30,7 +31,12 @@ export const useAuth = (userData: UserState) => {
           }
           navigate(PATH.TO_STATUS_MODAL);
         } else {
-          console.log('Ошибка: User is not null');
+          dispatch(
+            addNotification({
+              type: 'error',
+              message: 'Ошибка входа в аккаунт',
+            }),
+          );
         }
       } else {
         dispatch(logOutFromRedux());

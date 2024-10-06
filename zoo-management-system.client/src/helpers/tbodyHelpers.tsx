@@ -51,11 +51,31 @@ export const handleDelete = async ({
   try {
     event.stopPropagation();
 
+    if (!navigator.onLine) {
+      dispatch(
+        addNotification({
+          type: 'error',
+          message: 'Нет подключения к сети Интернет',
+        }),
+      );
+      throw new Error('No Internet connection');
+    }
+
     await deleteEntityByTableAndId({ tableName, id });
 
-    dispatch(addNotification(DB.SUCCESS_DELETION));
+    dispatch(
+      addNotification({
+        type: 'database',
+        message: DB.SUCCESS_DELETION,
+      }),
+    );
     dispatch(refreshData(id));
   } catch (error) {
-    dispatch(addNotification(DB.FAIL_DELETION));
+    dispatch(
+      addNotification({
+        type: 'database',
+        message: DB.FAIL_DELETION,
+      }),
+    );
   }
 };

@@ -1,3 +1,4 @@
+import Alert from '@components/Alert/Alert.tsx';
 import AddDataModal from '@pages/Modal/modals/AddDataModal/AddDataModal.tsx';
 import AuthModal from '@pages/Modal/modals/AuthModal/AuthModal.tsx';
 import StatusModal from '@pages/Modal/modals/StatusModal/StatusModal.tsx';
@@ -28,6 +29,7 @@ function Modal(): JSX.Element {
       {modalType === 'add' && <AddDataModal />}
       {modalType === 'edit' && <AddDataModal id={id} />}
       {modalType === 'validation' && <ValidationModal />}
+      <Alert />
     </>
   );
 }
