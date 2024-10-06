@@ -74,8 +74,7 @@ export async function getAnimalById(id: string): Promise<Animal | null> {
         actions: '',
       };
     } else {
-      console.log('No such document!');
-      return null;
+      throw new Error('No such document!');
     }
   } catch (error) {
     console.error('Error getting document:', error);
@@ -171,8 +170,7 @@ export async function getWorkTimeById(id: string): Promise<WorkTime | null> {
         actions: '',
       };
     } else {
-      console.log('No such document!');
-      return null;
+      throw new Error('No such document!');
     }
   } catch (error) {
     console.error('Error getting document:', error);
@@ -237,8 +235,7 @@ export async function getExaminationById(
         actions: '',
       };
     } else {
-      console.log('No such document!');
-      return null;
+      throw new Error('No such document!');
     }
   } catch (error) {
     console.error('Error getting document:', error);
@@ -294,8 +291,7 @@ export async function getEmployeeById(id: string): Promise<Employee | null> {
         actions: '',
       };
     } else {
-      console.log('No such document!');
-      return null;
+      throw new Error('No such document!');
     }
   } catch (error) {
     console.error('Error getting document:', error);
