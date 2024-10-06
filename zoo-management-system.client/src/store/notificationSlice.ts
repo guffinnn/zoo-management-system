@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface Notification {
-  id: number;
+  id?: number;
+  type: 'database' | 'error';
   message: string;
 }
 
@@ -19,10 +20,13 @@ const notificationSlice = createSlice({
   name: 'notifications',
   initialState,
   reducers: {
-    addNotification: (state, action: PayloadAction<string>) => {
+    addNotification: (state, action: PayloadAction<Notification>) => {
+      const notification = action.payload;
+
       state.notifications.push({
         id: nextNotificationId++,
-        message: action.payload,
+        type: notification.type,
+        message: notification.message,
       });
     },
     removeNotification: (state, action: PayloadAction<number>) => {
