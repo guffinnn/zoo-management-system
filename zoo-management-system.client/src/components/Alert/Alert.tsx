@@ -33,12 +33,14 @@ function Alert(): JSX.Element | null {
 
   useEffect(() => {
     if (error && error.message.length > 0) {
-      setShow(true);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
+      setShow({ showInitial: true });
     }
   }, [error]);
 
   return error && error.message.length > 0 ? (
-    <StyledAlert className="m-1" variant="secondary" show={show}>
+    <StyledAlert className="m-1" variant="secondary" show={show as boolean}>
       <Image src={info} alt="" />
       <div className="container">
         <StyledHeading>Что-то пошло не так :(</StyledHeading>
