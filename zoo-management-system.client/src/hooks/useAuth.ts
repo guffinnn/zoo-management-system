@@ -1,5 +1,6 @@
 import { PATH } from '@constants/paths.ts';
 import { UserState } from '@custom-types/user.ts';
+import { addNotification } from '@store/notificationSlice.ts';
 import { logOut as logOutFromRedux, setUser } from '@store/userSlice';
 import {
   getEmployeeByUserUid,
@@ -30,7 +31,12 @@ export const useAuth = (userData: UserState) => {
           }
           navigate(PATH.TO_STATUS_MODAL);
         } else {
-          console.log('Ошибка: User is not null');
+          dispatch(
+            addNotification({
+              type: 'error',
+              message: 'Ошибка входа в аккаунт',
+            }),
+          );
         }
       } else {
         dispatch(logOutFromRedux());

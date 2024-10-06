@@ -33,6 +33,13 @@ function AddDataModal({ id }: { id?: string }): JSX.Element {
       fetchData(id).then((data) => {
         if (data) {
           setCurrentValues(data);
+        } else {
+          dispatch(
+            addNotification({
+              type: 'error',
+              message: 'Не удалось получить данные',
+            }),
+          );
         }
       });
     }
@@ -52,16 +59,32 @@ function AddDataModal({ id }: { id?: string }): JSX.Element {
             let isSend = true;
             try {
               if (!navigator.onLine) {
+                dispatch(
+                  addNotification({
+                    type: 'error',
+                    message: 'Нет подключения к сети Интернет',
+                  }),
+                );
                 throw new Error('No Internet connection');
               }
               const pushData = dataPushers[dataType!];
               await pushData(values as EntityDataUnion);
               // Set notification to success
-              dispatch(addNotification(DB.SUCCESS_CREATION));
+              dispatch(
+                addNotification({
+                  type: 'database',
+                  message: DB.SUCCESS_CREATION,
+                }),
+              );
             } catch {
               isSend = false;
               // Set notification to fail
-              dispatch(addNotification(DB.FAIL_CREATION));
+              dispatch(
+                addNotification({
+                  type: 'database',
+                  message: DB.FAIL_CREATION,
+                }),
+              );
             } finally {
               const TO_MODAL = PATH.TO_VALIDATION_MODAL;
               navigate(TO_MODAL[dataType!], { state: { status: isSend } });

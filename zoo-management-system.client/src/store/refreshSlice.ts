@@ -13,7 +13,6 @@ const refreshSlice = createSlice({
   initialState,
   reducers: {
     refreshData: (state, action: PayloadAction<string>) => {
-      console.log('Refreshing data with payload:', action.payload);
       state.refreshID = action.payload;
     },
   },
